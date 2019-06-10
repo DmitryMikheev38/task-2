@@ -1,7 +1,13 @@
 
 
 window.onload = function () {
-  
+  $('#111').datepicker({
+    range: true,
+    toggleSelected: false,
+    offset: 0 + 'px'
+  });
+  var d =  $('#111').data('datepicker');
+
   var arrival = document.getElementById('arrival');
   var exit = document.getElementById('exit');
   var calendar = document.querySelector('.calendar');
@@ -9,8 +15,13 @@ window.onload = function () {
   var dateArrival = document.getElementById('arrival');
   var dateExit = document.getElementById('exit');
   var cells = document.querySelector('.datepicker--cells');
+  
+  function pad(n) {
+    if (n < 10)
+        return "0" + n;
+    return n;
+}
 
-  console.log('datepicer:' + datepicker);
   arrival.onclick = function (event) {
     calendar.style.display = 'block';
     event.cancelBubble = true;
@@ -24,29 +35,24 @@ window.onload = function () {
     }
 
   datepicker.onclick = event => {
+    minRange = d.minRange || d._focused;
+    maxRange = d.maxRange;
+    var minDate = pad(minRange.getDate()) + '.' + pad(minRange.getMonth()) + '.' + minRange.getFullYear();
+    var maxDate = '';
+    if (maxRange !== '') {
+      maxDate = pad(maxRange.getDate()) + '.' + pad(maxRange.getMonth()) + '.' + maxRange.getFullYear();
+    }
+    dateArrival.setAttribute('value', minDate);
+    dateExit.setAttribute('value', maxDate)
+
     event.cancelBubble = true;    
   }
-
-  cells.onclick = event => {
-    var year = event.target.getAttribute('data-year');
-    var date = event.target.getAttribute('data-date');
-    var month = event.target.getAttribute('data-month');
-    if ((date || month) === null) {
-      return
-    } else if (month.length < 2) {
-      month = '0' + month;
-    } 
-    if (date.length < 2) {
-      date = '0' + date;
-    }
-    var fullDate = date + '.' + month + '.' + year;
-    dateArrival.setAttribute('value', fullDate);
-  }
+  
 
   var calendaButton = document.createElement('button');
   calendaButton.innerHTML = "подобрать номер"
   datepicker.appendChild(calendaButton)
-  calendaButton.classList.add("gradient--button")
+  calendaButton.classList.add("gradient--button");
 }
 
 
