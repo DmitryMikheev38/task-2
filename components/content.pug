@@ -4,12 +4,27 @@
       h1.headline.quicksand24.weight-bold Найдём номера под ваши пожелания
       h3.montserrat12.weight-bold.uppercase прибытие 
       h3.montserrat12.weight-bold.uppercase выезд
-      input(type='text' id="arrival")
-      input(type='text' id="exit")
-      
-
-      div.calendar(id="111")
-
+      .input-container.arrival
+        input.input(type='text' id="arrival" placeholder="ДД.ММ.ГГГГ")
+      .input-container.exit
+        input.input(type='text' id="exit" placeholder="ДД.ММ.ГГГГ")
+      .calendar
+      .input-container.guests
+        input.input(type="text")
+        .amount-guest
+          ul
+            li.adult взрослые
+              button.min
+              span
+              button.max
+            li.children дети
+              button.min
+              span
+              button.max
+            li.baby младенцы
+              button.min
+              span
+              button.max  
       button.gradient--button(class="submit") Подобрать номер
         
     .text
