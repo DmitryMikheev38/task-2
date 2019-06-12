@@ -14,12 +14,10 @@ window.onload = function () {
   var datepicker = document.querySelector('.datepicker');
   var dateArrival = document.getElementById('arrival');
   var dateExit = document.getElementById('exit');
-  var cells = document.querySelector('.datepicker--cells');
-  var i = document.querySelector('.datepicker--nav-title i');
-
-  console.log(i.tagName)
-  i.style.cssText = "font-family: 'Quicksand', sans-serif; font-size: 19px; font-weight: bold"
-  
+  var inputGuests = document.querySelector('.guests .select');
+  var addGuests = document.querySelector('.amount-guest ul')
+  var sumGuests = document.querySelector('.guests .input');
+  console.log('ddd' + sumGuests.getAttribute('value'));
   function pad(n) {
     if (n < 10)
         return "0" + n;
@@ -70,6 +68,41 @@ window.onload = function () {
   datepicker.appendChild(calendarButtonApply);
   calendarButtonClear.className = "montserrat12 uppercase link weight-bold button-datepicker-clear";
   calendarButtonApply.classList = "montserrat12 uppercase link weight-bold button-datepicker-apply"
+
+  inputGuests.onclick = () => {
+    var guests = document.querySelector('.guests');
+    var attributeStyle = guests.getAttribute('style');
+    if (attributeStyle !== "height: 203px;") {
+      guests.style.height = "203px";
+    } else {
+      guests.style.height = "44px";
+    }
+    
+    
+  }
+
+  addGuests.onclick = e => {
+     if(e.target.tagName !== 'BUTTON') return;
+
+    // console.log('button active' + e.target)
+    // for (var key in e.target) {
+    //   console.log('key: ' + key + ' ||| value: ' + e.target[key])
+    // }
+    if (e.target.className === 'max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
+      var spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+      e.target.parentNode.children[1].innerHTML = spanValue;
+      sumGuests.setAttribute('value', spanValue)
+     // if ()
+      // console.log(' ||| value: ' + e.target.parentNode.children[1].innerHTML);
+      // console.log('ddd' + spanValue)
+    } else if (e.target.className === 'min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
+      var spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      e.target.parentNode.children[1].innerHTML = spanValue;
+    }
+    sumGuests
+    
+  }
+
 }
 
 

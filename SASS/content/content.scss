@@ -82,10 +82,94 @@
 
   .guests {
     position: absolute;
+    border-color: rgba(31, 32, 65, 0.5);
+    overflow: hidden;
+    height: 44px;
+    width: 320px;
     top: 226.44px;
+    left: 30px;
     z-index: 1;
     background: #FFFFFF;
+    .amount-guest {
+      position: absolute;
+      top: 42px;
+      padding: 0px;
+      box-sizing: border-box;
+      border-radius: 0 0 4px 4px;
+      border-top: 1px solid  rgba(31, 32, 65, 0.5);
+      height: 159px;
+      width: 319px;
+      ul {
+        padding-left: 0px;
+        margin: 0px;
+        li {
+          margin: 7px 0 0 0;
+          padding-left: 15px;
+          line-height: 30px;
+          position: relative;
+          list-style: none;  
+          height: 30px;
+          span {
+            
+            width: 32px;
+            height: 15px;
+            position: absolute;
+            right: 37px;
+            text-align: center;
+          }
+          button {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            box-sizing: border-box;
+            border-radius: 22px;
+            background-color: #FFFFFF;
+            
+          }
+          .min {
+            right: 69px;
+            background-image: url('../../images/-.svg');
+            background-repeat: no-repeat;
+            background-position: center; 
+          }
+          .max {
+            right: 7px;
+            background-image: url('../../images/+.svg');
+            background-repeat: no-repeat;
+            background-position: center; 
+          }
+          
+          
+        }
+      } 
+    }
   }
+}
+
+.input-container.guests .select:hover .input-container.guests {   
+  height: 203px;
+}
+.guests .amount-guest .clear {
+  position: absolute;
+  width: 72px;
+  height: 15px;
+  bottom: 13px;
+  left: 14px;
+  padding: 0;
+  color: rgba(31, 32, 65, 0.5);
+  background-color: #FFFFFF
+}
+
+.guests .amount-guest .apply {
+  position: absolute;
+  width: 84px;
+  height: 15px;
+  bottom: 13px;
+  right: 7px;
+  padding: 0;
+  color: #BC9CFF;
+  background-color: #FFFFFF
 }
 
 .exit, .arrival {

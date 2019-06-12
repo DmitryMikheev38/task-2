@@ -6,25 +6,30 @@
       h3.montserrat12.weight-bold.uppercase выезд
       .input-container.arrival
         input.input(type='text' id="arrival" placeholder="ДД.ММ.ГГГГ")
+        button.select
       .input-container.exit
         input.input(type='text' id="exit" placeholder="ДД.ММ.ГГГГ")
+        button.select
       .calendar
       .input-container.guests
-        input.input(type="text")
+        input.input(type="text" placeholder="Сколько гостей")
+        button.select
         .amount-guest
           ul
-            li.adult взрослые
+            li.adult.montserrat12.weight-bold.uppercase взрослые
               button.min
-              span
+              span 0
               button.max
-            li.children дети
+            li.children.montserrat12.weight-bold.uppercase дети
               button.min
-              span
+              span 0
               button.max
-            li.baby младенцы
+            li.baby.montserrat12.weight-bold.uppercase младенцы
               button.min
-              span
-              button.max  
+              span 0
+              button.max
+          button.clear.montserrat12.weight-bold.uppercase очистить
+          button.apply.montserrat12.weight-bold.uppercase применить
       button.gradient--button(class="submit") Подобрать номер
         
     .text
