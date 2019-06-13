@@ -1,16 +1,23 @@
 {
-  "name": "test",
+  "name": "project",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mikheev Dmitry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryMikheev38/task-2.git"
+  },
+  "author": "Dmitry Mikheev",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryMikheev38/task-2/issues"
+  },
+  "homepage": "https://github.com/DmitryMikheev38/task-2#readme",
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "jquery": "^3.4.1",
-    "material-design-icons": "^3.0.1"
+    "jquery": "^3.4.1"
   }
 }

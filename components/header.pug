@@ -1,22 +1,22 @@
-header
-  .conteiner
-    button.gradient--button <span>зарегестрироваться</span>
-    button.default--butoon <div><span>войти</span></div>
-    ul.menu--link
-      li 
-        a.link(href='#' class="montserrat14 weight-normal") Соглашения
-          <i class="material-icons">keyboard_arrow_down</i>
-      li 
-        a.link(href='#' class="montserrat14 weight-normal") Новости
-      li 
-       a.link(href='#' class="montserrat14 weight-normal") Вакансии
-      li 
-        a.link(href='#' class="montserrat14 weight-normal") Услуги <i class="material-icons">keyboard_arrow_down</i>
-      li 
-        a.link(href='#' class="montserrat14 weight-normal") О нас
-    .logo-svg
-      .logo
-      .toxin
-      .clearfix
-    .clearfix
-    
+.header
+  .header__wrapper
+    .logo
+      .logo__image
+      .logo__toxin
+    ul.menu
+      li.menu__button
+        a.link(href="#") О нас
+      li.menu__button
+        a.link(href="#") Услуги
+        span.menu__button__select-icon
+      li.menu__button
+        a.link(href="#") Вакансии
+      li.menu__button
+        a.link(href="#") Новости
+      li.menu__button
+        a.link(href="#") Соглашения
+        span.menu__button__select-icon
+    button.button.header__button
+      span.button__text Зарегестрироваться
+    button.button-default.header__button-default
+      span.button-default__text Войти

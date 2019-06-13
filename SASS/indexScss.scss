@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@import './fontStyle.scss';
+@import './headerStyle/header.scss';
+@import './activeElements.scss';
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none
+  }
+}

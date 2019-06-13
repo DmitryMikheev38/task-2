@@ -1,29 +1,27 @@
 
-.montserrat14 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-}
-
-.montserrat12 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-}
-
-.weight-bold {
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/Montserrat/Montserrat-Bold.woff) format("woff"),
+  url(../font/Montserrat/Montserrat-Bold.ttf) format("ttf"),
+  url(../font/Montserrat/Montserrat-Bold.svg) format("svg");
   font-weight: bold;
+  font-style: normal;
 }
 
-.weight-normal {
+@font-face {
+  font-family: "Montserrat";
+  src: url(../font/Montserrat/Montserrat-Light.woff) format("woff"),
+  url(../font/Montserrat/Montserrat-Light.ttf) format("ttf"),
+  url(../font/Montserrat/Montserrat-Light.svg) format("svg");
   font-weight: normal;
+  font-style: normal;
 }
 
-.quicksand24 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
-}
-
-
-
-.uppercase {
-  text-transform: uppercase;
+@font-face {
+  font-family: "Quicksand";
+  src: url(../font/Quicksand/Quicksand-Bold.woff) format("woff"),
+  url(../font/Quicksand/Quicksand-Bold.ttf) format("ttf"),
+  url(../font/Quicksand/Quicksand-Bold.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
 }

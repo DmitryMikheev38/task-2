@@ -1,0 +1,53 @@
+.header {
+  max-width: 1920px;
+  min-width: 320px;
+  min-height: 70px;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background-color: antiquewhite;
+}
+
+.header__wrapper {
+  background-color: aqua;
+  max-width: 1160px;
+  min-width: 320px;
+  min-height: 70px;
+  padding: 0; 
+  margin: 0 auto;
+  position: relative;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 40px;
+  width: 105.69px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo__image {
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/Vector.svg), url(../images/VectorLeft.svg), url(../images/VectorRight.svg);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: top right, top 15.29px left 9.41px, top 15.29px left 21.47px;
+  float: left;
+}
+
+.logo__toxin {
+  width: 53.19px;
+  height: 12.95px;
+  background-image: url(../images/TOXIN.svg);
+  background-repeat: no-repeat;
+  background-position: top -0.3px left -0.5px;
+  float: left;
+  margin-left: 12.5px;
+  margin-top: 13.33px;
+}
