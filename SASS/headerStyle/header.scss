@@ -1,3 +1,4 @@
+
 .header {
   max-width: 1920px;
   min-width: 320px;
@@ -5,11 +6,9 @@
   padding: 0;
   margin: 0;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  background-color: antiquewhite;
 }
 
 .header__wrapper {
-  background-color: aqua;
   max-width: 1160px;
   min-width: 320px;
   min-height: 70px;
@@ -30,6 +29,11 @@
   padding: 0;
 }
 
+.header__logo {
+  float: left;
+  margin-top: 15px;
+}
+
 .logo__image {
   margin: 0;
   padding: 0;
@@ -48,6 +52,40 @@
   background-repeat: no-repeat;
   background-position: top -0.3px left -0.5px;
   float: left;
+  margin: 0;
+  padding: 0;
   margin-left: 12.5px;
   margin-top: 13.33px;
+}
+
+.header__button, .header__button-default {
+  float: right;
+  margin-top: 18px;
+}
+
+.header__button-default {
+  margin-right: 20px;
+}
+
+.header__wrapper::after {
+  display: block;
+  width: 0px;
+  content: "";
+  clear: both;
+}
+
+.menu__button {
+  float: right;
+  margin-right: 20px;
+  margin-top: 26px;
+}
+
+.menu__button__select-icon {
+  display: block;
+  background-image: url('../../images/expand_more.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  width: 24px;
+  height: 21px;
 }

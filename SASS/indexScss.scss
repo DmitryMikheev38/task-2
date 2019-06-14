@@ -5,9 +5,12 @@ html {
   box-sizing: inherit;
 }
 
+@import './variablesMixsins.scss';
 @import './fontStyle.scss';
 @import './headerStyle/header.scss';
 @import './activeElements.scss';
+@import './contentStyle/content.scss';
+
 
 body {
   padding: 0px;
@@ -20,4 +23,8 @@ button {
   &:focus {
     outline: none
   }
+}
+
+input:focus {
+  outline: none;
 }

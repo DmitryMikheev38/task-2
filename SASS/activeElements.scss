@@ -63,3 +63,145 @@
 .menu__button {
   list-style: none;
 }
+
+.input-wrapper {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  min-width: 100px;
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.input-wrapper__input {
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  flex-shrink: 2;
+  flex-grow: 0;
+  margin: 0px;
+  height: 44px;
+  padding: 0 0 0 15px;
+  @include montserrat (14px, 'normal', 'normal');
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input-wrapper__button {
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 44px;
+  height: 44px;
+  width: 44px;
+  background: url("../images/expand_more.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.drop-down {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  min-width: 140px;
+  height: 44px;
+  margin: 0px;
+  padding: 0px;
+  display: inline-flex;
+  flex-direction: row;
+  overflow: hidden;
+  z-index: 1;
+  background: #FFFFFF;
+}
+
+.drop-down__input {
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  flex-shrink: 2;
+  flex-grow: 0;
+  margin: 0px;
+  height: 44px;
+  padding: 0 0 0 15px;
+  @include montserrat (14px, 'normal', 'normal');
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.drop-down__button {
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 44px;
+  height: 44px;
+  width: 44px;
+  background: url("../images/expand_more.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.drop-down__list {
+  position: absolute;
+  display: block;
+  top: 42px;
+  padding: 0px;
+  border-radius: 0 0 4px 4px;
+  border-top: 1px solid  rgba(31, 32, 65, 0.5);
+  height: 159px;
+  width: 319px;
+}
+
+.drop-down__list__ul {
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.drop-down__list__cells {
+  margin-top: 7px;
+  width: 100%;
+  padding-left: 15px;
+  line-height: 30px;
+  list-style: none;  
+  height: 30px;
+}
+
+.drop-down__list__button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 22px;
+  background-color: #FFFFFF;
+}
+
+.drop-down__list__button--max, .drop-down__list__number, .drop-down__list__button--min {
+  float: right;
+}
+
+.drop-down__list__button--max {
+  background-image: url('../../images/+.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  margin-right: 7px;
+}
+
+.drop-down__list__button--min {
+  background-image: url('../../images/-.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+.drop-down__list__number {
+  float: right;
+  width: 32px;
+  text-align: center;
+}
+
+.button-empty {
+  @include montserrat (12px, bold, normal);
+  width: 84px;
+  height: 15px;
+  padding: 0;
+  text-transform: uppercase;
+  background-color: #FFFFFF
+}
+

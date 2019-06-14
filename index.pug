@@ -2,8 +2,14 @@ doctype html
 html(lang="ru")
   head
     title= "Start page"
-      meta(charset="utf-8")
+    meta(charset="utf-8")
     link(rel="stylesheet", href="style/pageStyle.css")
+    link(rel="stylesheet", href="style/datepicker.css") 
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js")
   body
     include components/header
+    include components/pageContent
+
+    script(src="js/main.js")
     

@@ -1,0 +1,18 @@
+
+$maxWidthPage: 1920px;
+$minWidthPage: 320px;
+$maxWidthWrapper: 1160px;
+
+@mixin montserrat ($font-size, $font-weight, $font-style) {
+  font-family: 'Montserrat', sans-serif;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}
+
+@mixin quicksand ($font-size, $font-weight, $font-style) {
+  font-family: 'Quicksand', sans-serif;
+  font-size: $font-size;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}

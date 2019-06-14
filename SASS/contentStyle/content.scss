@@ -1,0 +1,150 @@
+
+.content {
+  background: url(../images/index.png), no-repeat;
+  height: 830px;
+  max-width: $maxWidthPage;
+  min-width: $minWidthPage;
+  margin: 0px;
+  padding: 0px; 
+}
+
+.content__wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthWrapper;
+  min-width: $minWidthPage;
+  min-height: 70px;
+  height: 830px;
+  position: relative;
+}
+
+.room-search {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  height: 374px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 70px;
+}
+
+.headline {
+  @include quicksand(24px, bold, normal);
+  line-height: 30px;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 320px;
+  height: 60px;
+}
+
+.subhead {
+  @include montserrat(12px, bold, normal);
+  text-transform: uppercase;
+  
+}
+
+.room-search__subhead--arrival {
+  line-height: 15px;
+  width: 83px;
+  height: 15px;
+  display: block;
+  left: 30px;
+  position: absolute;
+  top: 120px;
+  margin: 0px;
+}
+
+.room-search__subhead--exit {
+  line-height: 15px;
+  display: block;
+  width: 83px;
+  height: 15px;
+  right: 97px;
+  position: absolute;
+  top: 120px;
+  margin: 0px;
+}
+
+.room-search__subhead--guests {
+  left: 30px;
+  height: 15px;
+  top: 205px;
+  position: absolute;
+  margin: 0px;
+}
+
+.input-wrapper--arrival, .input-wrapper--exit {
+  position: absolute;
+  top: 140.44px;
+  width: 150px;
+}
+
+.input-wrapper--arrival {
+  left: 30px;
+}
+
+.input-wrapper--exit {
+  right: 30px;
+}
+
+.room-search__drop-down {
+  top: 226.44px;
+  left: 30px;
+  position: absolute;
+  width: 320px;
+  height: 44px;
+}
+
+.drop-down__list__button-empty--apply {
+  position: absolute;
+  bottom: 13px;
+  right: 7px;
+  padding: 0;
+  color: #BC9CFF;
+  background-color: #FFFFFF
+}
+
+.drop-down__list__button-empty--clear {
+  position: absolute;
+  bottom: 13px;
+  left: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.room-search__button {
+  position: absolute;
+  bottom: 30px;
+  margin: 0px;
+  right: 30px;
+  width: 320px;
+  height: 44px;
+}
+
+.content__text {
+  position: absolute;
+  right: 0px;
+  bottom: 18px;
+  width: 297px;
+  height: 48px;
+  text-align: right;
+  line-height: 24px;
+}
+
+.text {
+  color: rgba(31, 32, 65, 0.75);
+  @include montserrat(14px, normal, normal);
+}
+
+.calendar {
+  position: absolute; 
+  display: none;
+  width: 320px;
+  height: 44px; 
+  top: 190px;
+  left: 30px;
+  z-index: 10;
+}

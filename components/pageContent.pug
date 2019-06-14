@@ -1,0 +1,41 @@
+.content
+  .content__wrapper
+
+    .room-search
+      h1.headline.room-search__headline Найдём номера под ваши пожелания
+      h2.subhead.room-search__subhead--arrival Прибытие
+      h2.subhead.room-search__subhead--exit Выезд
+      .input-wrapper.input-wrapper--arrival
+        input.input-wrapper__input(type='text' placeholder="ДД.ММ.ГГГГ")
+        button.input-wrapper__button
+      .input-wrapper.input-wrapper--exit
+        input.input-wrapper__input(type='text' placeholder="ДД.ММ.ГГГГ")
+        button.input-wrapper__button
+      .calendar
+
+      h2.subhead.room-search__subhead--guests Гости
+      .drop-down.room-search__drop-down
+        input.drop-down__input(type="text" placeholder="Сколько гостей")
+        button.drop-down__button
+        .drop-down__list
+          ul.drop-down__list__ul
+            li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--children Дети
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--baby Младенцы
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+          button.button-empty.drop-down__list__button-empty--clear Очистить
+          button.button-empty.drop-down__list__button-empty--apply Применить
+
+      button.button.room-search__button Подобрать номер
+
+
+    .content__text
+      p.text Лучшие номера для вашей работы, отдыха и просто вдохновения
