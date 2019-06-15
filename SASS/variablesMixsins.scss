@@ -2,6 +2,8 @@
 $maxWidthPage: 1920px;
 $minWidthPage: 320px;
 $maxWidthWrapper: 1160px;
+$colorApply: #BC9CFF;
+$colorClear: rgba(31, 32, 65, 0.5);
 
 @mixin montserrat ($font-size, $font-weight, $font-style) {
   font-family: 'Montserrat', sans-serif;

@@ -1,0 +1,84 @@
+
+.footer {
+  max-width: $maxWidthPage;
+  min-width: $minWidthPage;
+  min-height: 372px;
+  margin: 0px;
+  padding: 0px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); 
+}
+
+.footer__wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthWrapper;
+  min-width: $minWidthPage;
+  min-height: 372px;
+  position: relative;
+}
+
+.best-hotel, .navigation, .about-us, .support, .subscription {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+  margin-top: 104px;
+  width: 160px;
+}
+
+.best-hotel, .navigation, .about-us, .support {
+  margin-right: 40px;
+}
+
+.best-hotel {
+  width: 260px;
+  margin-top: 100px;
+}
+
+.subscription {
+  width: 260px;
+}
+
+.best-hotel__text {
+  line-height: 24px;
+  margin-top: 20px;
+}
+
+.subscriotion__text {
+  line-height: 24px;
+  margin-top: 21px;
+}
+
+.navigation__list, .about-us__list, .support__list {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation__list__cell, .about-us__list__cell, .support__list__cell{
+  list-style: none;
+  height: 18px;
+  margin-top: 20px;
+}
+
+.navigation__list__cell:first-child, .about-us__list__cell:first-child, .support__list__cell:first-child {
+  margin-top: 21px;
+}
+
+.subscription__input-wrapper {
+  width: 260px;
+  margin-top: 20px;
+}
+
+.input-wrapper__button--next {
+  background-image: url('../../images/arrow_forward.svg');
+  background-repeat: no-repeat;
+  background-position: center; 
+}
+
+q {
+  quotes: "\00ab" "\00bb";
+}
+
+.navigation__subhead, .about-us__subhead, .support__subhead, .subscription__subhead {
+  margin: 0;
+}

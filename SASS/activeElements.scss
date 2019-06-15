@@ -12,6 +12,7 @@
   font-size: 12px;
 }
 
+
 .button-default{
   border-radius: 22px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); 
@@ -58,6 +59,10 @@
   line-height: 17px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.link:focus {
+  color: rgba(31, 32, 65, 0.8);
 }
 
 .menu__button {

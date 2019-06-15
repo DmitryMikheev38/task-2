@@ -11,9 +11,9 @@ window.onload = function () {
   var exit = document.querySelector('.input-wrapper--exit').childNodes[0];
   var calendar = document.querySelector('.calendar');
   var datepicker = document.querySelector('.datepicker');
-  var inputGuests = document.querySelector('.room-search__drop-down').childNodes[0];
+  var inputSelector = document.querySelector('.room-search__drop-down').childNodes[1];
   var addGuests = document.querySelector('.drop-down__list__ul')
-  var sumGuests = document.querySelector('.guests .input');
+  var sumGuests = document.querySelector('.room-search__drop-down .drop-down__input');
   console.log('ddd' + arrival);
   function pad(n) {
     if (n < 10)
@@ -34,10 +34,19 @@ window.onload = function () {
     event.cancelBubble = true;
   };
 
-  exit.onclick = event => {
-    calendar.style.display = 'block';
+
+  exitButton = document.querySelector('.input-wrapper--exit').childNodes[1];
+  exitButton.onclick = event => {
+    if (!block) {
+      calendar.style.display = 'block';
+      block = true;
+    } else if (block) {
+      calendar.style.display = 'none';
+      block = false;
+    }  
     event.cancelBubble = true;
   };
+
   document.onclick = function () {
     calendar.style.display = 'none';
     }
@@ -65,50 +74,130 @@ window.onload = function () {
   }
   
 
-  var calendarButtonClear = document.createElement('a');
-  var calendarButtonApply = document.createElement('a');
+  var calendarButtonClear = document.createElement('button');
+  var calendarButtonApply = document.createElement('button');
   calendarButtonClear.innerHTML = "очистить";
   calendarButtonApply.innerHTML = "применить";
   datepicker.appendChild(calendarButtonClear);
   datepicker.appendChild(calendarButtonApply);
-  calendarButtonClear.className = "montserrat12 uppercase link weight-bold button-datepicker-clear";
-  calendarButtonApply.classList = "montserrat12 uppercase link weight-bold button-datepicker-apply"
+  calendarButtonClear.classList = "button-empty calendar__button-empty--clear";
+  calendarButtonApply.classList = "button-empty calendar__button-empty--apply"
 
-  inputGuests.onclick = () => {
-    var guests = document.querySelector('.guests');
-    var attributeStyle = guests.getAttribute('style');
-    if (attributeStyle !== "height: 203px;") {
-      guests.style.height = "203px";
-    } else {
-      guests.style.height = "44px";
+  inputSelector.onclick = () => {
+    var select = document.querySelector('.drop-down');
+    var attributeStyle = select.getAttribute('style');
+    if (attributeStyle === null) {
+      select.style.height = "203px";
+      select.style.borderColor="rgba(31, 32, 65, 0.5)"     
+    } else if (select.style.height === "203px"){
+      select.removeAttribute('style')
     }
-    
-    
   }
 
   addGuests.onclick = e => {
-     if(e.target.tagName !== 'BUTTON') return;
-      var attr = Number(sumGuests.getAttribute('value'))
+    if((e.target.parentNode.className === "subhead drop-down__list__cells drop-down__list__cells--baby") || (e.target.tagName !== 'BUTTON') ) return;
+      let baby = sumGuests.getAttribute('value').split(',')[1];
+      let adult = sumGuests.getAttribute('value').split(',')[0];
+      let val = adult.split(' ')[0]
+      let attr = Number(val);
+      console.log(adult);
 
-    // console.log('button active' + e.target)
-    // for (var key in e.target) {
-    //   console.log('key: ' + key + ' ||| value: ' + e.target[key])
-    // }
-    if (e.target.className === 'max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
-      var spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+    if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
+      let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
       e.target.parentNode.children[1].innerHTML = spanValue;
-
-      sumGuests.setAttribute('value', attr + 1);
-     // if ()
-      // console.log(' ||| value: ' + e.target.parentNode.children[1].innerHTML);
-      // console.log('ddd' + spanValue)
-    } else if (e.target.className === 'min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
-      var spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      attr++;
+      let adult = attr;
+      let lastNum = Number(attr.toString().slice(-1))
+      let sign = ' гостей';
+      if (attr > 10 && attr < 20) {
+        sign = ' гостей';
+      } else if (lastNum === 1) {
+        sign = ' гость';
+      } else if (lastNum > 1 && lastNum < 5) {
+        sign = ' гостя';
+      }
+      let comma;
+      if (baby === undefined) {
+        comma = '';
+        baby = '';
+      } else {
+        comma = ','
+      }
+      sumGuests.setAttribute('value', adult + sign + comma + baby);
+    } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
+      let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
       e.target.parentNode.children[1].innerHTML = spanValue;
-      sumGuests.setAttribute('value', attr - 1);
+      attr--;
+      let lastNum = Number(attr.toString().slice(-1))
+      let sign = ' гостей';
+      if (attr !== 0 && attr > 10 && attr < 20) {
+        sign = ' гостей';
+      } else if (lastNum === 1) {
+        sign = ' гость';
+      } else if (lastNum > 1 && lastNum < 5) {
+        sign = ' гостя';
+      }
+      let comma;
+      if (baby === undefined) {
+        baby = '';
+        comma = '';
+      } else {
+        comma = ','
+      }
+      sumGuests.setAttribute('value', attr + sign + comma + baby);
+      if (attr === 0 && baby === '') {
+        sumGuests.setAttribute('value', '');
+      };
     }
     sumGuests
-    
+  }
+
+  let babyCell = document.querySelector('.drop-down__list__cells--baby');
+  babyCell.onclick = e => {
+    if (e.target.tagName !== 'BUTTON') return;
+    let val = sumGuests.getAttribute('value');
+    let attr = Number(val);
+    let adult = sumGuests.getAttribute('value').split(',')[0];
+    let comm = ', ';
+    if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
+      let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+      e.target.parentNode.children[1].innerHTML = spanValue;
+      let sign = ' младенцев';
+      if (spanValue > 9 && spanValue < 21) {
+        sign = ' младенцев'
+      } else if (Number(spanValue.toString().slice(-1)) == 1 ) {
+        sign = ' младенец'
+      } else if (Number(spanValue.toString().slice(-1)) < 5 ) {
+        sign = ' младенца'
+      }
+      if (adult == 0) {
+        adult = '0 гостей';
+      }
+      sumGuests.setAttribute('value', adult + comm + spanValue + sign);
+    } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
+      let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      e.target.parentNode.children[1].innerHTML = spanValue;
+      let sign = ' младенцев';
+      if (spanValue > 9 && spanValue < 21) {
+        sign = ' младенцев'
+      } else if (spanValue == 0) {
+        sign = '';
+        spanValue = '';
+        comm = '';
+      } else if (Number(spanValue.toString().slice(-1)) == 1 ) {
+        sign = ' младенец'
+      } else if (Number(spanValue.toString().slice(-1)) < 5 ) {
+        sign = ' младенца'
+      }
+      if (adult == 0) {
+        adult = '0 гостей';
+      }
+      sumGuests.setAttribute('value', adult + comm + spanValue + sign);
+
+      if (spanValue == 0 && adult == '0 гостей') {
+        sumGuests.setAttribute('value', '');
+      };
+    }
   }
 
 }
