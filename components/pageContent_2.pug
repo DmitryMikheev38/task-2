@@ -1,0 +1,110 @@
+
+.content
+  .content__wrapper
+
+
+    .selection-room
+
+      h2.subhead.selection-room__subhead--dates-of-stay Даты пребывания в отеле
+      .input-wrapper.selection-room__input-wrapper
+        input.input-wrapper__input(type='text' placeholder="")
+        button.input-wrapper__button
+      .calendar
+
+      h2.subhead.selection-room__subhead--guests Гости
+      .drop-down.selection-room__drop-down--guests
+        input.drop-down__input(type="text" placeholder="Сколько гостей" value="")
+        button.drop-down__button
+        .drop-down__list
+          ul.drop-down__list__ul
+            li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--children Дети
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--baby Младенцы
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+          button.button-empty.drop-down__list__button-empty--clear Очистить
+          button.button-empty.drop-down__list__button-empty--apply Применить
+    
+      h2.subhead.selection-room__subhead--prise Диапазон цены
+      p.text.selection-room__text--num-prise
+        span.min-prise 0
+        | &#8381 - 
+        span.max-prise 0
+        | &#8381
+      .slider.selection-room__sliger
+        .bar(data-start="1" data-end="20")
+          .lp(data-pos="0.1")
+          .rp(data-pos="0.7")
+      p.text.selection-room__text--description-prise Стоимость за сутки пребывания в номере
+
+      h2.subhead.selection-room__subhead--special-options Специальные условия
+      input.checkbox.selection-room__checkbox--smoke(type="checkbox" id="smoke")
+      label.label.selection-room__label--smoke(for="smoke") 
+        span.checkbox-text Можно курить
+      input.checkbox.selection-room__checkbox--pets(type="checkbox" id="pets")
+      label.label.selection-room__label--pets(for="pets")
+        span.checkbox-text Можно с питомцами
+      input.checkbox.selection-room__checkbox--guests(type="checkbox" id="guests")
+      label.label.selection-room__label--guests(for="guests")
+        span.checkbox-text Можно пригласить гостей (до 10 человек)
+
+      h2.subhead.selection-room__subhead--accessibility Доступность
+      input.checkbox.selection-room__checkbox--hole(type="checkbox" id="hole")
+      label.label.selection-room__label--hole(for="hole")
+        span.checkbox-text Широкий коридор
+      p.text.selection-room__text--hole Ширина коридоров в номере не мене 91 см
+      input.checkbox.selection-room__checkbox--helper(type="checkbox" id="helper")
+      label.label.selection-room__label--helper(for="helper")
+        span.checkbox-text Помошник для инвалидов
+      p.text.selection-room__text--helper На 1 этаже вас встретит специалист и проводит до номера
+
+      h2.subhead.selection-room__subhead--comfort Удобства номера
+      .drop-down.selection-room__drop-down--bed
+        input.drop-down__input(type="text" placeholder="Сколько гостей" value="")
+        button.drop-down__button
+        .drop-down__list
+          ul.drop-down__list__ul
+            li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--children Дети
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+            li.subhead.drop-down__list__cells.drop-down__list__cells--baby Младенцы
+              button.drop-down__list__button.drop-down__list__button--max
+              span.drop-down__list__number 0
+              button.drop-down__list__button.drop-down__list__button--min
+          button.button-empty.drop-down__list__button-empty--clear Очистить
+          button.button-empty.drop-down__list__button-empty--apply Применить
+    
+      .comfort-list.selection-room__comfort-list
+        h2.subhead.comfort-list__subhead--extra-comfort Дополнительные удобства
+        button.button-more.comfort-list__button-more
+        input.checkbox.comfort-list__checkbox--breakfast(type="checkbox" id="breakfast")
+        label.label.comfort-list__label--breakfast(for="breakfast")
+          span.checkbox-text Завтрак
+        input.checkbox.comfort-list__checkbox--table(type="checkbox" id="table")
+        label.label.comfort-list__label--table(for="table")
+          span.checkbox-text Письменный стол
+        input.checkbox.comfort-list__checkbox--chair-meel(type="checkbox" id="chair-meel")
+        label.label.comfort-list__label--chair-meel(for="chair-meel")
+          span.checkbox-text Стул для кормления
+        input.checkbox.comfort-list__checkbox--bed-baby(type="checkbox" id="bed-baby")
+        label.label.comfort-list__label--bed-baby(for="bed-baby")
+          span.checkbox-text Кроватка
+        input.checkbox.comfort-list__checkbox--tv(type="checkbox" id="tv")
+        label.label.comfort-list__label--tv(for="tv")
+          span.checkbox-text Телевизор
+        input.checkbox.comfort-list__checkbox--shampoo(type="checkbox" id="shampoo")
+        label.label.comfort-list__label--shampoo(for="shampoo")
+          span.checkbox-text Шампунь
+      

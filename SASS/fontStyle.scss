@@ -25,3 +25,27 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.headline {
+  @include quicksand(24px, bold, normal);
+  line-height: 30px;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 320px;
+  height: 60px;
+}
+
+.subhead {
+  @include montserrat(12px, bold, normal);
+  text-transform: uppercase;
+}
+
+
+.text {
+  color: rgba(31, 32, 65, 0.75);
+  @include montserrat(14px, normal, normal);
+  margin: 0px;
+}

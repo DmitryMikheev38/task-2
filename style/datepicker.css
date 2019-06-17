@@ -230,12 +230,16 @@
 .datepickers-container {
   position: absolute;
   left: 0;
-  top: 0; }
+  top: 0;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+ }
 
 .datepicker {
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  -moz-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  -webkit-box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   box-sizing: content-box;
   font-family: Tahoma, sans-serif;
@@ -264,7 +268,7 @@
 
 .datepicker-inline .datepicker {
   border-color: #d7d7d7;
-  box-shadow: none;
+  /* box-shadow: none; */
   position: static;
   left: auto;
   right: auto;

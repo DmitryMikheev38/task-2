@@ -1,4 +1,5 @@
 
+
 window.onload = function () {
   $('.calendar').datepicker({
     range: true,
@@ -14,7 +15,9 @@ window.onload = function () {
   var inputSelector = document.querySelector('.room-search__drop-down').childNodes[1];
   var addGuests = document.querySelector('.drop-down__list__ul')
   var sumGuests = document.querySelector('.room-search__drop-down .drop-down__input');
-  console.log('ddd' + arrival);
+  var dropDownClear = document.querySelector('.drop-down__list__button-empty--clear');
+  var subscriptionInput = document.querySelector('.subscription__input-wrapper .input-wrapper__input');
+  
   function pad(n) {
     if (n < 10)
         return "0" + n;
@@ -49,6 +52,7 @@ window.onload = function () {
 
   document.onclick = function () {
     calendar.style.display = 'none';
+    block = false;
     }
 
   datepicker.onclick = event => {
@@ -88,9 +92,10 @@ window.onload = function () {
     var attributeStyle = select.getAttribute('style');
     if (attributeStyle === null) {
       select.style.height = "203px";
-      select.style.borderColor="rgba(31, 32, 65, 0.5)"     
+      select.style.borderColor="rgba(31, 32, 65, 0.5)";
+      select.style.boxShadow = "0px 10px 20px rgba(31, 32, 65, 0.05)";    
     } else if (select.style.height === "203px"){
-      select.removeAttribute('style')
+      select.removeAttribute('style');
     }
   }
 
@@ -149,6 +154,11 @@ window.onload = function () {
         sumGuests.setAttribute('value', '');
       };
     }
+    if (sumGuests.getAttribute('value') !== '') {
+      dropDownClear.style.display = "block";
+    } else {
+      dropDownClear.style.display = "none";
+    }
     sumGuests
   }
 
@@ -198,8 +208,29 @@ window.onload = function () {
         sumGuests.setAttribute('value', '');
       };
     }
+    if (sumGuests.getAttribute('value') !== '' ) {
+      dropDownClear.style.display = "block";
+    } else {
+      dropDownClear.style.display = "none";
+    }
   }
 
+  dropDownClear.onclick = () => {
+    sumGuests.setAttribute('value', '');
+    let dropDownSpan = document.querySelectorAll('.room-search__drop-down .drop-down__list__cells');
+    for (let i = 0; i < dropDownSpan.length; i++) {
+      dropDownSpan[i].children[1].innerHTML = 0;
+    }
+    dropDownClear.style.display = "none";
+  }
+
+  subscriptionInput.onfocus = () => {
+    subscriptionInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.5)";
+  }
+
+  subscriptionInput.onblur = () => {
+    subscriptionInput.parentNode.removeAttribute('style');
+  }
 }
 
 

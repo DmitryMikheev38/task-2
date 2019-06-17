@@ -30,23 +30,6 @@
   top: 70px;
 }
 
-.headline {
-  @include quicksand(24px, bold, normal);
-  line-height: 30px;
-  margin: 0;
-  display: block;
-  position: absolute;
-  top: 40px;
-  left: 30px;
-  width: 320px;
-  height: 60px;
-}
-
-.subhead {
-  @include montserrat(12px, bold, normal);
-  text-transform: uppercase;
-}
-
 .room-search__subhead--arrival {
   line-height: 15px;
   width: 83px;
@@ -108,7 +91,12 @@
   background-color: #FFFFFF
 }
 
+.drop-down__list__button-empty--apply:active {
+  color:rgba(31, 32, 65, 0.5);
+}
+
 .drop-down__list__button-empty--clear {
+  display: none;
   position: absolute;
   bottom: 13px;
   left: 14px;
@@ -148,11 +136,7 @@
   margin: 0px;
 }
 
-.text {
-  color: rgba(31, 32, 65, 0.75);
-  @include montserrat(14px, normal, normal);
-  margin: 0px;
-}
+
 
 .calendar {
   position: absolute; 
@@ -164,22 +148,7 @@
   z-index: 10;
 }
 
-.calendar__button-empty--clear {
-  margin-bottom: 20px;
-  height: 15px;
-  width: 72px;
-  color: $colorClear;
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
 
-.calendar__button-empty--apply {
-  margin-right: 20px;
-  margin-bottom: 20px;
-  float: right;
-  margin-bottom: 20px;
-  width: 84px;
-  color: $colorApply;
-  height: 15px;
+.calendar__button-empty--apply:active {
+  color: rgba(31, 32, 65, 0.5);
 }
