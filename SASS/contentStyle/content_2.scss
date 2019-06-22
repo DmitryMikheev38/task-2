@@ -1,6 +1,6 @@
 
 .content {
-  height: 830px;
+  min-height: 1230px;
   max-width: $maxWidthPage;
   min-width: $minWidthPage;
   margin: 0px;
@@ -11,16 +11,17 @@
   margin: 0 auto;
   max-width: $maxWidthWrapper;
   min-width: $minWidthPage;
-  min-height: 70px;
-  min-height: 830px;
+  min-height: 1430px;
   position: relative;
 }
 .selection-room {
+  display: inline-block;
   width: 266px;
-  min-height: 830px;
+  min-height: 1230px;
   position: relative;
   margin: 0;
   padding: 0;
+  margin-right: 48px;
 }
 
 .calendar {
@@ -172,5 +173,84 @@
 
 .selection-room__comfort-list {
   position: absolute;
+  width: 266px;
+  height: 30px;
   top: 739px;
+  overflow: hidden;
 }
+
+.comfort-list__button-more {
+  position: absolute; 
+  top: -15px;
+  right: 0;
+}
+
+.comfort-list__subhead--extra-comfort {
+  margin: 0;
+}
+
+.calendar {
+  position: absolute;
+  top: 100px;
+}
+
+.drop-down__list__button-empty--clear {
+  display: none;
+  position: absolute;
+  bottom: 13px;
+  left: 14px;
+  color: $colorClear;
+}
+
+.drop-down__list__button-empty--apply {
+  position: absolute;
+  bottom: 13px;
+  right: 7px;
+  padding: 0;
+  color: $colorApply;
+  background-color: #FFFFFF
+}
+
+.drop-down__list__button-empty--apply:active {
+  color:rgba(31, 32, 65, 0.5);
+}
+
+.room-cards {
+  display: inline-block;
+  position: absolute;
+  max-width: 846px;
+  // width: 100%;
+  // height: 846px; 
+  min-width: 282px;
+  margin: 30px 0 0 0;
+  vertical-align: top;
+ 
+}
+
+
+
+.slider-card__photo--1 {
+  background-image: url('/images/rooms/image1.jpg');
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.slider-card__photo--2 {
+  background-image: url('/images/rooms/image2.jpg');
+}
+
+.slider-card__photo--3 {
+  background-image: url('/images/rooms/image3.jpg');
+}
+
+.slider-card__photo--4 {
+  background-image: url('/images/rooms/image4.jpg');
+}
+
+
+
+
+
+
+

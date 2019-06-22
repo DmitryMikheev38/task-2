@@ -15,7 +15,7 @@
       .drop-down.selection-room__drop-down--guests
         input.drop-down__input(type="text" placeholder="Сколько гостей" value="")
         button.drop-down__button
-        .drop-down__list
+        .drop-down__list.drop-down__list--guests
           ul.drop-down__list__ul
             li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
               button.drop-down__list__button.drop-down__list__button--max
@@ -67,24 +67,22 @@
 
       h2.subhead.selection-room__subhead--comfort Удобства номера
       .drop-down.selection-room__drop-down--bed
-        input.drop-down__input(type="text" placeholder="Сколько гостей" value="")
+        input.drop-down__input(type="text" placeholder="" value="1 спальня, 1 кровать, 1 ванная")
         button.drop-down__button
         .drop-down__list
           ul.drop-down__list__ul
-            li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
+            li.subhead.drop-down__list__cells.drop-down__list__cells--bedrooms Спальни
               button.drop-down__list__button.drop-down__list__button--max
-              span.drop-down__list__number 0
+              span.drop-down__list__number 1
               button.drop-down__list__button.drop-down__list__button--min
-            li.subhead.drop-down__list__cells.drop-down__list__cells--children Дети
+            li.subhead.drop-down__list__cells.drop-down__list__cells--beds Кровати
               button.drop-down__list__button.drop-down__list__button--max
-              span.drop-down__list__number 0
+              span.drop-down__list__number 1
               button.drop-down__list__button.drop-down__list__button--min
-            li.subhead.drop-down__list__cells.drop-down__list__cells--baby Младенцы
+            li.subhead.drop-down__list__cells.drop-down__list__cells--bathrooms Ванные комнаты
               button.drop-down__list__button.drop-down__list__button--max
-              span.drop-down__list__number 0
+              span.drop-down__list__number 1
               button.drop-down__list__button.drop-down__list__button--min
-          button.button-empty.drop-down__list__button-empty--clear Очистить
-          button.button-empty.drop-down__list__button-empty--apply Применить
     
       .comfort-list.selection-room__comfort-list
         h2.subhead.comfort-list__subhead--extra-comfort Дополнительные удобства
@@ -107,4 +105,35 @@
         input.checkbox.comfort-list__checkbox--shampoo(type="checkbox" id="shampoo")
         label.label.comfort-list__label--shampoo(for="shampoo")
           span.checkbox-text Шампунь
-      
+
+
+    .room-cards
+      h1.headline.room-cards__headline Номера, которые мы для вас подобрали
+      .card.room-cards__card
+        .slider-card.card__slider-card
+          button.slider-card__button--next
+          button.slider-card__button--back
+          .button-group__card
+          .slider-card__container
+            img.slider-card__photo.slider-card__photo--1
+            img.slider-card__photo.slider-card__photo--2
+            img.slider-card__photo.slider-card__photo--3
+            img.slider-card__photo.slider-card__photo--4
+        .card__description
+          h2.subhead.card__subhead 
+            |№ 
+            span.subhead__number 888
+          span.primary.card__primary Люкс
+          p.text.card__text--prise
+            span.text__number 9 990&#8381 
+            |  в сутки
+          .card__line
+          .card__stars
+            .star.card__stars__star--1
+            .star.card__stars__star--2
+            .star.card__stars__star--3
+            .star.card__stars__star--4
+            .star.card__stars__star--5
+          p.text.card__text--reviews
+            span.text__number 19
+            |  Озывов 
