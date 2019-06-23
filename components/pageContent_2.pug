@@ -108,32 +108,42 @@
 
 
     .room-cards
-      h1.headline.room-cards__headline Номера, которые мы для вас подобрали
-      .card.room-cards__card
-        .slider-card.card__slider-card
-          button.slider-card__button--next
-          button.slider-card__button--back
-          .button-group__card
-          .slider-card__container
-            img.slider-card__photo.slider-card__photo--1
-            img.slider-card__photo.slider-card__photo--2
-            img.slider-card__photo.slider-card__photo--3
-            img.slider-card__photo.slider-card__photo--4
-        .card__description
-          h2.subhead.card__subhead 
-            |№ 
-            span.subhead__number 888
-          span.primary.card__primary Люкс
-          p.text.card__text--prise
-            span.text__number 9 990&#8381 
-            |  в сутки
-          .card__line
-          .card__stars
-            .star.card__stars__star--1
-            .star.card__stars__star--2
-            .star.card__stars__star--3
-            .star.card__stars__star--4
-            .star.card__stars__star--5
-          p.text.card__text--reviews
-            span.text__number 19
-            |  Озывов 
+      .cards-list
+        h1.headline.room-cards__headline Номера, которые мы для вас подобрали
+        .card.room-cards__card
+          .slider-card.card__slider-card
+            button.slider-card__button--next
+            button.slider-card__button--back
+            .button-group__card
+            .slider-card__container
+              img.slider-card__photo.slider-card__photo--1
+              img.slider-card__photo.slider-card__photo--2
+              img.slider-card__photo.slider-card__photo--3
+              img.slider-card__photo.slider-card__photo--4
+          .card__description
+            h2.subhead.card__subhead 
+              |№ 
+              span.subhead__number 888
+            span.primary.card__primary Люкс
+            p.text.card__text--prise
+              span.text__number 9 990&#8381 
+              |  в сутки
+            .card__line
+            .card__stars
+              .star.card__stars__star--1
+              .star.card__stars__star--2
+              .star.card__stars__star--3
+              .star.card__stars__star--4
+              .star.card__stars__star--5
+            p.text.card__text--reviews
+              span.text__number 19
+              |  Озывов 
+      
+      .navigation-rooms.room-cards__navigation
+        a.navigation-rooms__button.navigation-rooms__button--1.active-page 1
+        a.navigation-rooms__button.navigation-rooms__button--2 2
+        a.navigation-rooms__button.navigation-rooms__button--3 3
+        a.navigation-rooms__button.navigation-rooms__button--4 ...
+        a.navigation-rooms__button.navigation-rooms__button--4 15
+        a.navigation-rooms__button.navigation-rooms__button--next  
+      p.text.room-cards-text 1 - 12 из 100+ вариантов аренды

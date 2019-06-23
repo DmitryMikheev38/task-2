@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@import './variablesMixsins.scss';
+@import './fontStyle.scss';
+@import './activeElements.scss';
+@import './headerStyle/header.scss';
+@import './contentStyle/content_3.scss';
+@import './footerStyle/footer.scss';
+@import './footerStyle/copyright.scss';
+
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {color: rgba(31, 32, 65, 0.25);}
+::-moz-placeholder          {color: rgba(31, 32, 65, 0.25);}/* Firefox 19+ */
+:-moz-placeholder           {color: rgba(31, 32, 65, 0.25);}/* Firefox 18- */
+:-ms-input-placeholder      {color: rgba(31, 32, 65, 0.25);}

@@ -1,0 +1,16 @@
+
+
+.content {
+  max-width: $maxWidthPage;
+  min-width: $minWidthPage;
+  margin: 0px;
+  padding: 0px; 
+}
+
+.content__wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthWrapper;
+  min-width: $minWidthPage;
+  position: relative;
+
+}

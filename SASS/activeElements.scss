@@ -618,3 +618,44 @@
   line-height: 30px;
 }
 
+.navigation-rooms {
+  width: 240px;
+  height: 40px;
+  display: block;
+}
+
+.navigation-rooms__button {
+
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: rgba(31, 32, 65, 0.75);
+  @include montserrat(12px, normal, normal);
+  margin: 0px;
+}
+
+.navigation-rooms__button--next {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 22px;
+ 
+}
+.navigation-rooms__button--next::after {
+  content: '.';
+  display: block;
+  border-radius: 22px;
+  color: #66D2EA;
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/arrow_forward_white.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.active-page {
+  border-radius: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color:white;
+}

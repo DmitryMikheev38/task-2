@@ -1,7 +1,6 @@
 
-
 window.onload = function () {
- 
+  
   
   $('.calendar').datepicker({
     range: true,
@@ -346,9 +345,9 @@ window.onload = function () {
 
   dropDownClear.onclick = () => {
     sumGuests.setAttribute('value', '');
-    let dropDownSpan = document.querySelectorAll('.room-search__drop-down .drop-down__list__cells');
+    let dropDownSpan = document.querySelectorAll('.selection-room__drop-down--guests .drop-down__list__number');
     for (let i = 0; i < dropDownSpan.length; i++) {
-      dropDownSpan[i].children[1].innerHTML = 0;
+      dropDownSpan[i].innerHTML = 0;
     }
     dropDownClear.style.display = "none";
   }
@@ -512,13 +511,14 @@ window.onload = function () {
   }
 
 
-  let roomCards = document.querySelector('.room-cards');
+  let roomCards = document.querySelector('.cards-list');
   let card = document.querySelector('.card');
   let btn = document.createElement('button');
   btn.classList = 'button-group__card__button'
-  for(var i = 1; i < rooms.length; i++) {
+  card.style.display = "none";
+  for(var i = 0; i < rooms.length; i++) {
     let cloneCard = card.cloneNode(true);
-
+    cloneCard.style.display = 'inline-block';
     let sliderCardImage = cloneCard.querySelectorAll('.slider-card__photo');
     let roomNumber = cloneCard.querySelector('.subhead__number');
     let lux = cloneCard.querySelector('.card__primary');
@@ -557,18 +557,21 @@ window.onload = function () {
     buttonGroup.appendChild(clonebutton);
     }
 
-  let docButtonGroup = document.querySelectorAll('.button-group__card__button');
+  let docButtonGroup = document.querySelectorAll('.button-group__card');
 
   
   let sliderButtonNext = document.querySelectorAll('.slider-card__button--next');
   let slidrButtonBack = document.querySelectorAll('.slider-card__button--back');
   for (let i = 0; i < sliderButtonNext.length; i++) {
+   
+
+    
     let imageIndex = 0;
     sliderButtonNext[i].addEventListener("click", function (e) {
       let traslate = 270;
-      let count = e.target.parentNode.children[3].children.length;
+      let count = e.target.parentNode.children[3].children.length - 1;
       imageIndex++;
-      if (imageIndex > e.target.parentNode.children[3].children.length - 1) {
+      if (imageIndex > count) {
         imageIndex = 0;
       }
       e.target.parentNode.children[3].style.transform = 'translate(-' + traslate*imageIndex+ 'px)';
@@ -596,7 +599,8 @@ window.onload = function () {
       buttonGroup[imageIndex].style.backgroundColor = 'white';
     })
 
-    for (let i = 0; i < docButtonGroup.length; i++) {
+    
+      
       docButtonGroup[i].addEventListener("click", function (e) {
         if (e.target.tagName !== 'BUTTON') return;
         for (let i = 0; i < e.target.parentNode.children.length; i++) {
@@ -607,9 +611,11 @@ window.onload = function () {
         let traslate = 270;
         let targetIndex = Number(e.target.getAttribute('id'));
           e.target.parentNode.parentNode.children[3].style.transform = 'translate(-' + traslate*targetIndex+ 'px)';
-          this.imageIndex = targetIndex;
+          imageIndex = targetIndex;
       })
-    }
+    
 
-  } 
+ 
+  }
+
 }
