@@ -61,6 +61,24 @@ html {
   font-style: normal;
   font-weight: bold; }
 
+.headline-two {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
+  color: #1F2041;
+  line-height: 24px; }
+
+.subhead-two {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
+  color: rgba(31, 32, 65, 0.75);
+  line-height: 24px; }
+
 .button {
   font-family: Montserrat serif;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -740,6 +758,365 @@ html {
   max-width: 1160px;
   min-width: 320px;
   position: relative; }
+
+.page-images {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0px;
+  padding: 0px;
+  height: 485px;
+  position: relative; }
+
+.page-images__image--1 {
+  width: 70%;
+  background-size: cover;
+  height: 485px;
+  background-image: url("/images/rooms/imagePage_3.1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0; }
+
+.page-images__image--2 {
+  width: 30%;
+  height: 243px;
+  background-image: url("/images/rooms/imagePage_3.2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0; }
+
+.page-images__image--3 {
+  width: 30%;
+  height: 243px;
+  background-image: url("/images/rooms/imagePage_3.3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0; }
+
+.page-images__image {
+  display: inline-block; }
+
+.room-info {
+  display: inline-block;
+  background-color: aqua;
+  max-width: 710px;
+  min-width: 320px; }
+
+.intelligence {
+  display: inline-block;
+  vertical-align: top;
+  width: 280px;
+  min-height: 273px;
+  margin-top: 70px;
+  margin-right: 81px; }
+
+.intelligence__comfort, .intelligence__facilities, .intelligence__cosiness {
+  width: 280px;
+  height: 88px;
+  margin: 0; }
+
+.intelligence__comfort::after, .intelligence__facilities::after, .intelligence__cosiness::after {
+  content: '';
+  clear: both; }
+
+.intelligence__facilities, .intelligence__cosiness {
+  border-top: 1px solid rgba(31, 32, 65, 0.1); }
+
+.intelligence__comfort__text, .intelligence__facilities__text, .intelligence__cosiness__text {
+  line-height: 24px;
+  float: left; }
+
+.intelligence__comfort__subhead-two, .intelligence__facilities__subhead-two, .intelligence__cosiness__subhead-two {
+  display: block;
+  margin-top: 23px;
+  float: left;
+  width: 210px; }
+
+.intelligence__comfort__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-image: url("/images/insert_emoticon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  margin: 20px 10px 0 0; }
+
+.intelligence__facilities__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-image: url("/images/location_city.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  margin: 20px 10px 0 0; }
+
+.intelligence__cosiness__icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-image: url("/images/whatshot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  margin: 20px 10px 0 0; }
+
+.intelligence__comfort__subhead-two {
+  display: block; }
+
+.impressions {
+  display: inline-block;
+  position: relative;
+  width: 310px;
+  height: 273px;
+  vertical-align: top;
+  margin-top: 70px; }
+
+.impressions__diagram {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-top: 21px; }
+
+.impressions__diagram__sumptuously {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 59px;
+  height: 120px;
+  border-radius: 100px 0 0 100px;
+  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+  box-sizing: border-box; }
+
+.impressions__diagram__sumptuously::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  top: 4px;
+  left: 4px;
+  width: 55px;
+  height: 112px;
+  border-radius: 100px 0 0 100px; }
+
+.impressions__diagram__well {
+  width: 59px;
+  height: 59px;
+  border-radius: 0 0 100px 0;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+
+.impressions__diagram__well::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  border-radius: 0 0 100px 0;
+  width: 55px;
+  height: 55px; }
+
+.impressions__diagram__adequately {
+  width: 59px;
+  height: 59px;
+  border-radius: 0 100px 0 0;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.impressions__diagram__adequately::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: white;
+  border-radius: 0 100px 0 0;
+  width: 49px;
+  height: 49px;
+  top: 10px; }
+
+.impressions__diagram__number {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+  color: #BC9CFF;
+  position: absolute;
+  top: 35px;
+  left: 40px; }
+
+.impressions__diagram__primary {
+  position: absolute;
+  top: 60px;
+  left: 28px; }
+
+.impressions__list {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 74px;
+  line-height: 24px;
+  width: 146px;
+  height: 96px;
+  margin: 0;
+  padding: 0; }
+
+.impressions__list__cell {
+  list-style: none; }
+
+.impressions__list__cell::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 6px;
+  left: -15px; }
+
+.impressions__list__cell--sumptuously::before {
+  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%); }
+
+.impressions__list__cell--well::before {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
+
+.impressions__list__cell--adequately::before {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+
+.impressions__list__cell--disappointed::before {
+  background: linear-gradient(180deg, #919191 0%, #3D4975 100%); }
+
+.reviews {
+  width: 100%;
+  position: relative;
+  margin-top: 13px; }
+
+.reviews__quantity-reviews {
+  position: absolute;
+  right: 0;
+  top: 5px; }
+
+.reviews__person {
+  margin-top: 20px; }
+
+.reviews__person__photo {
+  display: inline-block;
+  width: 47.67px;
+  height: 48px;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+  border-radius: 32px;
+  border: 2px solid #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.reviews__person__photo--one {
+  background-image: url("/images/photo/photo1.jpg"); }
+
+.reviews__person__photo--two {
+  background-image: url("/images/photo/photo2.jpg"); }
+
+.reviews__person__name {
+  height: 48px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+  margin-left: 12px; }
+
+.reviews__like {
+  width: 39.72px;
+  display: block;
+  height: 20px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: normal;
+  position: relative;
+  line-height: 12px;
+  color: rgba(31, 32, 65, 0.25);
+  margin-top: 10px;
+  margin-left: 4px; }
+
+.reviews__like__icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  width: 19.86px;
+  height: 18px;
+  background-image: url("/images/favorite_border.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 9px; }
+
+.reviews__like__number {
+  display: block;
+  position: absolute;
+  width: 9.93px;
+  height: 13px;
+  top: 3px;
+  left: 19.86px; }
+
+.reviews__person__text {
+  display: inline-block;
+  max-width: 653px;
+  margin-left: 58px;
+  margin-top: -20px;
+  line-height: 24px; }
+
+.rules {
+  display: inline-block;
+  width: 293px;
+  margin-top: 30px;
+  margin-right: 70px; }
+
+.rules__headline-two {
+  margin-left: 21px; }
+
+.rules__list {
+  line-height: 24px;
+  padding-left: 21px;
+  margin-top: 20px; }
+
+.rules__list__cell {
+  margin-bottom: 10px;
+  list-style: none; }
+
+.rules__list__cell::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 6px;
+  margin-left: -21px;
+  background-color: rgba(31, 32, 65, 0.25); }
+
+.cancel {
+  display: inline-block;
+  max-width: 341px;
+  min-width: 320px;
+  vertical-align: top;
+  margin-top: 30px; }
+
+.cancel__text {
+  line-height: 24px;
+  margin-top: 20px; }
 
 .footer {
   max-width: 1920px;

@@ -564,8 +564,6 @@ window.onload = function () {
   let slidrButtonBack = document.querySelectorAll('.slider-card__button--back');
   for (let i = 0; i < sliderButtonNext.length; i++) {
    
-
-    
     let imageIndex = 0;
     sliderButtonNext[i].addEventListener("click", function (e) {
       let traslate = 270;
