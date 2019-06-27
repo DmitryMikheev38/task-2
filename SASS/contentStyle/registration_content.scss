@@ -1,0 +1,147 @@
+
+.content {
+  min-height: 702px;
+  max-width: $maxWidthPage;
+  min-width: $minWidthPage;
+  margin: 0px;
+  padding: 0px;
+  background: url(/images/registration.jpg), no-repeat;
+  background-size: cover;
+  
+}
+
+.content__wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthWrapper;
+  min-width: $minWidthPage;
+  min-height: 702px;
+  padding-top: 30px;
+  position: relative;
+}
+
+.registration {
+  width: 380px;
+  height: 646px;
+  background-color:#FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin: 0 auto 0 auto; 
+}
+
+.registration__headline {
+  width: 320px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.registration__form__input-wrapper--name {
+  width: 320px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.registration__form__input-wrapper--surname {
+  width: 320px;
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.regisration__form__label-radio--men {
+  width: 68px;
+  height: 24px;
+  line-height: 24px;
+  @include montserrat(14px, normal, normal);
+  color: rgba(31, 32, 65, 0.75);
+  margin-top: 10.44px;
+  margin-left: 60px;
+  display: inline-block;
+}
+
+.regisration__form__label-radio--women {
+  width: 73px;
+  height: 24px;
+  line-height: 24px;
+  @include montserrat(14px, normal, normal);
+  color: rgba(31, 32, 65, 0.75);
+  margin-top: 10.44px;
+  margin-left: 49px;
+  display: inline-block;
+}
+
+.registration__form__subhead--burn {
+  height: 15px;
+  line-height: 15px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.registration__form__input-wrapper--date-burn {
+  width: 320px;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.registration__form__subhead--login-info {
+  height: 15px;
+  line-height: 15px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.registration__form__input-wrapper--email, .registration__form__input-wrapper--password {
+  width: 320px;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.registration__form__input-wrapper--password {
+  margin-top: 10px;
+}
+
+.registration__form__toggle-label {
+  width: 210px;
+  height: 24px;
+  display: block;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.registration__form__button {
+  width: 320px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 30px;
+  position: relative;
+}
+
+.registration__text {
+  height: 18px;
+  display: inline-block;
+  width: 186px;
+  line-height: 18px;
+  color: #000000;
+  margin-top: 42px;
+  margin-left: 30px;
+}
+
+.registration__button-default {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 35px;
+  vertical-align: top;
+  width: 99px;
+  height: 44px;
+  line-height: 66px;
+}
+
+.registration__button-default__text {
+  margin-top: -35px;
+}

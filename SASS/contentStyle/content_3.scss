@@ -12,6 +12,7 @@
   max-width: $maxWidthWrapper;
   min-width: $minWidthPage;
   position: relative;
+  padding-bottom: 60px;
 
 }
 
@@ -32,9 +33,7 @@
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
+ 
 }
 
 .page-images__image--2 {
@@ -69,9 +68,9 @@
 
 .room-info {
   display: inline-block;
-  background-color: aqua;
   max-width: 710px;
   min-width: 320px;
+  margin-right: 70px;
 }
 
 .intelligence {
@@ -427,4 +426,225 @@
 .cancel__text {
   line-height: 24px;
   margin-top: 20px;
+}
+
+.reservation {
+  width: 380px;
+  height: 511px;
+  display: inline-block;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  vertical-align: top;
+  margin-top: 70px;
+  position: relative;
+}
+
+.reservation__subhead--number {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 64px;
+  height: 30px;
+  line-height: 17px;
+  margin: 0px;
+}
+
+.subhead__number {
+  margin: 0px;
+  height: 30px;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.reservation__primary {
+  position: absolute;
+  top: 51px;
+  left: 99px;
+}
+
+.reservation__text--prise {
+  margin: 0px;
+  height: 20px;
+  color: rgba(31, 32, 65, 0.5);
+  top: 50px;
+  right: 30px;
+  position: absolute;
+}
+
+.reservation__subhead--arrival {
+  position: absolute;
+  margin: 0px;
+  top: 90px;
+  left: 30px;
+}
+
+.reservation__subhead--exit {
+  position: absolute;
+  margin: 0px;
+  top: 90px;
+  left: 200px;
+}
+
+.reservation__input-wrapper--arrival {
+  width: 150px;
+  position: absolute;
+  top: 110.44px;
+  left: 30px;
+}
+
+.reservation__input-wrapper--exit {
+  width: 150px;
+  position: absolute;
+  top: 110.44px;
+  left: 200px;
+}
+
+.reservation__subhead--guests {
+  position: absolute;
+  margin: 0px;
+  top: 174.44px;
+  left: 30px;
+}
+
+.reservation__drop-down {
+  width: 320px;
+  position: absolute;
+  top: 194.44px;
+  left: 30px;
+}
+
+.reservation__text--total-cost {
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 259px;
+  left: 31px;
+}
+
+.number--total-cost {
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 259px;
+  right: 30px;
+}
+
+.reservation__text--service-charge {
+  height: 24px;
+  width: 214px;
+  line-height: 24px;
+  position: absolute;
+  top: 293px;
+  left: 31px;
+}
+
+.reservation__text__info--service-charge {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  color: rgba(31, 32, 65, 0.25);
+  @include montserrat(12px, bold, normal);
+  line-height: 18px;
+  top: 293px;
+  left: 250px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.number--service-charge {
+  height: 24px;
+  position: absolute;
+  top: 293px;
+  right: 30px;
+  line-height: 24px;
+}
+
+.reservation__text--service-fee {
+  height: 24px;
+  width: 214px;
+  line-height: 18px;
+  position: absolute;
+  top: 327px;
+  left: 31px;
+}
+
+.reservation__text__info--service-fee {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 50%;
+  color: rgba(31, 32, 65, 0.25);
+  @include montserrat(12px, bold, normal);
+  line-height: 18px;
+  top: 327px;
+  left: 250px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.number--service-fee {
+  height: 24px;
+  position: absolute;
+  top: 327px;
+  right: 30px;
+  line-height: 24px;
+}
+
+.reservation__headline-two--total {
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 393px;
+  left: 31px;
+}
+
+.reservation__headline-two--total-number {
+  height: 24px;
+  line-height: 24px;
+  position: absolute;
+  top: 393px;
+  right: 30px;
+}
+
+.reservation__line-pointer {
+  width: 182px;
+  height: 1px;
+  border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
+  position: absolute;
+  top: 411px;
+  left: 91px;
+}
+
+.reservation__button {
+  width: 320px;
+  height: 44px;
+  position: absolute;
+  top: 437px;
+  left: 30px;
+}
+
+.reservation__button__icon--next {
+  background-image: url(../../images/arrow_forward_white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+.calendar {
+  position: absolute;
+  z-index: 10;
+  top: 160px;
+  left: 30px;
+  display: none;
 }

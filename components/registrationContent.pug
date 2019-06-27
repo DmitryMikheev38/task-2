@@ -1,0 +1,31 @@
+.content
+
+  .content__wrapper
+    .registration
+      h1.headline.registration__headline Регистрация аккаунта
+      form.registration__form(method="post")
+        .input-wrapper.registration__form__input-wrapper--name
+          input.input-wrapper__input(type='text' name="name" placeholder='Имя')
+        .input-wrapper.registration__form__input-wrapper--surname
+          input.input-wrapper__input(type='text' name="surname" placeholder="Фамилия")
+        input.radio.regisration__form__radio(type="radio" name="gender" id="men")
+        label.label-radio.regisration__form__label-radio--men(for='men') Мужчина
+        input.radio.regisration__form__radio(type="radio" name="gender" id='women')
+        label.label-radio.regisration__form__label-radio--women(for='women') Женщина
+
+        h2.subhead.registration__form__subhead--burn Дата рождения
+        .input-wrapper.registration__form__input-wrapper--date-burn
+          input.input-wrapper__input(type='text' name='date-burn' placeholder="ДД.ММ.ГГГГ")
+        h2.subhead.registration__form__subhead--login-info Данные для входа в сервис
+        .input-wrapper.registration__form__input-wrapper--email
+          input.input-wrapper__input(type='text' name='email' placeholder="Email")
+        .input-wrapper.registration__form__input-wrapper--password
+          input.input-wrapper__input(type='password' name='password' placeholder="Пароль")
+        input.toggle.registration__form__roggle(type='checkbox' id='special-offers' name='special-offers')
+        label.toggle-label.registration__form__toggle-label(for='special-offers') Получать спецпредложения
+        button.button.registration__form__button(type='') Перейти к оплате
+          span.button__icon.button__icon--next 
+        
+      p.text.registration__text Уже есть аккаунт на Toxin
+      button.button-default.registration__button-default
+        span.button-default__text.registration__button-default__text Войти

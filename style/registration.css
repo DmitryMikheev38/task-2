@@ -4,6 +4,39 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+body {
+  padding: 0px;
+  margin: 0px; }
+
+button {
+  border: none;
+  cursor: pointer; }
+  button:focus {
+    outline: none; }
+
+input:focus {
+  outline: none; }
+
+input {
+  outline: none; }
+
+input {
+  border: none; }
+
+::-webkit-input-placeholder {
+  color: rgba(31, 32, 65, 0.25); }
+
+::-moz-placeholder {
+  color: rgba(31, 32, 65, 0.25); }
+
+/* Firefox 19+ */
+:-moz-placeholder {
+  color: rgba(31, 32, 65, 0.25); }
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+  color: rgba(31, 32, 65, 0.25); }
+
 @font-face {
   font-family: "Montserrat";
   src: url(../font/Montserrat/Montserrat-Bold.woff) format("woff"), url(../font/Montserrat/Montserrat-Bold.ttf) format("ttf"), url(../font/Montserrat/Montserrat-Bold.svg) format("svg");
@@ -97,10 +130,15 @@ html {
 
 .button-default {
   border-radius: 22px;
+  display: block;
+  position: relative;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   width: 87px;
   height: 34px;
-  padding: 2px 2px; }
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px; }
 
 .button-default:active {
   background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%); }
@@ -125,6 +163,7 @@ html {
   color: #BC9CFF;
   font-family: Montserrat, sans-serif;
   display: block;
+  height: 100%;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -683,6 +722,100 @@ html {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   color: white; }
 
+.radio {
+  display: none; }
+
+.label-radio {
+  position: relative;
+  cursor: pointer; }
+
+.label-radio::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  position: absolute;
+  left: -30px;
+  top: 2px; }
+
+.label-radio::after {
+  content: '';
+  display: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  box-sizing: border-box;
+  position: absolute;
+  left: -26px;
+  top: 6px; }
+
+.radio:checked + .label-radio::after {
+  display: block; }
+
+.radio:checked + .label-radio::before {
+  border: 1px solid #BC9CFF; }
+
+.toggle-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.75);
+  position: relative;
+  cursor: pointer; }
+
+.toggle {
+  display: none; }
+
+.toggle-label::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 20px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 10px;
+  position: absolute;
+  left: -50px; }
+
+.toggle-label::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  background: rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  left: -46px;
+  top: 4px;
+  transition: transform 0.3s; }
+
+.toggle:checked + .toggle-label::after {
+  transform: translate(20px);
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
+
+.toggle:checked + .toggle-label::before {
+  border: 1px solid #BC9CFF; }
+
+.button__icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  margin: 0; }
+
+.button__icon--next {
+  background-image: url(../../images/arrow_forward_white.svg); }
+
 .header {
   max-width: 1920px;
   min-width: 320px;
@@ -763,578 +896,138 @@ html {
   height: 21px; }
 
 .content {
+  min-height: 702px;
   max-width: 1920px;
   min-width: 320px;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  background: url(/images/registration.jpg), no-repeat;
+  background-size: cover; }
 
 .content__wrapper {
   margin: 0 auto;
   max-width: 1160px;
   min-width: 320px;
-  position: relative;
-  padding-bottom: 60px; }
-
-.page-images {
-  max-width: 1920px;
-  min-width: 320px;
-  margin: 0px;
-  padding: 0px;
-  height: 485px;
+  min-height: 702px;
+  padding-top: 30px;
   position: relative; }
 
-.page-images__image--1 {
-  width: 70%;
-  background-size: cover;
-  height: 485px;
-  background-image: url("/images/rooms/imagePage_3.1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0; }
-
-.page-images__image--2 {
-  width: 30%;
-  height: 243px;
-  background-image: url("/images/rooms/imagePage_3.2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0; }
-
-.page-images__image--3 {
-  width: 30%;
-  height: 243px;
-  background-image: url("/images/rooms/imagePage_3.3.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 0; }
-
-.page-images__image {
-  display: inline-block; }
-
-.room-info {
-  display: inline-block;
-  max-width: 710px;
-  min-width: 320px;
-  margin-right: 70px; }
-
-.intelligence {
-  display: inline-block;
-  vertical-align: top;
-  width: 280px;
-  min-height: 273px;
-  margin-top: 70px;
-  margin-right: 81px; }
-
-.intelligence__comfort, .intelligence__facilities, .intelligence__cosiness {
-  width: 280px;
-  height: 88px;
-  margin: 0; }
-
-.intelligence__comfort::after, .intelligence__facilities::after, .intelligence__cosiness::after {
-  content: '';
-  clear: both; }
-
-.intelligence__facilities, .intelligence__cosiness {
-  border-top: 1px solid rgba(31, 32, 65, 0.1); }
-
-.intelligence__comfort__text, .intelligence__facilities__text, .intelligence__cosiness__text {
-  line-height: 24px;
-  float: left; }
-
-.intelligence__comfort__subhead-two, .intelligence__facilities__subhead-two, .intelligence__cosiness__subhead-two {
-  display: block;
-  margin-top: 23px;
-  float: left;
-  width: 210px; }
-
-.intelligence__comfort__icon {
-  display: block;
-  width: 48px;
-  height: 48px;
-  background-image: url("/images/insert_emoticon.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  float: left;
-  margin: 20px 10px 0 0; }
-
-.intelligence__facilities__icon {
-  display: block;
-  width: 48px;
-  height: 48px;
-  background-image: url("/images/location_city.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  float: left;
-  margin: 20px 10px 0 0; }
-
-.intelligence__cosiness__icon {
-  display: block;
-  width: 48px;
-  height: 48px;
-  background-image: url("/images/whatshot.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  float: left;
-  margin: 20px 10px 0 0; }
-
-.intelligence__comfort__subhead-two {
-  display: block; }
-
-.impressions {
-  display: inline-block;
-  position: relative;
-  width: 310px;
-  height: 273px;
-  vertical-align: top;
-  margin-top: 70px; }
-
-.impressions__diagram {
-  display: inline-block;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin-top: 21px; }
-
-.impressions__diagram__sumptuously {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 59px;
-  height: 120px;
-  border-radius: 100px 0 0 100px;
-  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-  box-sizing: border-box; }
-
-.impressions__diagram__sumptuously::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: white;
-  top: 4px;
-  left: 4px;
-  width: 55px;
-  height: 112px;
-  border-radius: 100px 0 0 100px; }
-
-.impressions__diagram__well {
-  width: 59px;
-  height: 59px;
-  border-radius: 0 0 100px 0;
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  position: absolute;
-  right: 0;
-  bottom: 0; }
-
-.impressions__diagram__well::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: white;
-  border-radius: 0 0 100px 0;
-  width: 55px;
-  height: 55px; }
-
-.impressions__diagram__adequately {
-  width: 59px;
-  height: 59px;
-  border-radius: 0 100px 0 0;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  position: absolute;
-  right: 0;
-  top: 0; }
-
-.impressions__diagram__adequately::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: white;
-  border-radius: 0 100px 0 0;
-  width: 49px;
-  height: 49px;
-  top: 10px; }
-
-.impressions__diagram__number {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 30px;
-  color: #BC9CFF;
-  position: absolute;
-  top: 35px;
-  left: 40px; }
-
-.impressions__diagram__primary {
-  position: absolute;
-  top: 60px;
-  left: 28px; }
-
-.impressions__list {
-  display: inline-block;
-  position: absolute;
-  right: 0;
-  top: 74px;
-  line-height: 24px;
-  width: 146px;
-  height: 96px;
-  margin: 0;
-  padding: 0; }
-
-.impressions__list__cell {
-  list-style: none; }
-
-.impressions__list__cell::before {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  margin-top: 6px;
-  left: -15px; }
-
-.impressions__list__cell--sumptuously::before {
-  background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%); }
-
-.impressions__list__cell--well::before {
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%); }
-
-.impressions__list__cell--adequately::before {
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
-
-.impressions__list__cell--disappointed::before {
-  background: linear-gradient(180deg, #919191 0%, #3D4975 100%); }
-
-.reviews {
-  width: 100%;
-  position: relative;
-  margin-top: 13px; }
-
-.reviews__quantity-reviews {
-  position: absolute;
-  right: 0;
-  top: 5px; }
-
-.reviews__person {
-  margin-top: 20px; }
-
-.reviews__person__photo {
-  display: inline-block;
-  width: 47.67px;
-  height: 48px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
-  border-radius: 32px;
-  border: 2px solid #FFFFFF;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
-
-.reviews__person__photo--one {
-  background-image: url("/images/photo/photo1.jpg"); }
-
-.reviews__person__photo--two {
-  background-image: url("/images/photo/photo2.jpg"); }
-
-.reviews__person__name {
-  height: 48px;
-  display: inline-block;
-  vertical-align: top;
-  line-height: 24px;
-  margin-left: 12px; }
-
-.reviews__like {
-  width: 39.72px;
-  display: block;
-  height: 20px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: normal;
-  position: relative;
-  line-height: 12px;
-  color: rgba(31, 32, 65, 0.25);
-  margin-top: 10px;
-  margin-left: 4px; }
-
-.reviews__like__icon {
-  display: block;
-  position: absolute;
-  top: 0;
-  box-sizing: border-box;
-  width: 19.86px;
-  height: 18px;
-  background-image: url("/images/favorite_border.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  line-height: 9px; }
-
-.reviews__like__number {
-  display: block;
-  position: absolute;
-  width: 9.93px;
-  height: 13px;
-  top: 3px;
-  left: 19.86px; }
-
-.reviews__person__text {
-  display: inline-block;
-  max-width: 653px;
-  margin-left: 58px;
-  margin-top: -20px;
-  line-height: 24px; }
-
-.rules {
-  display: inline-block;
-  width: 293px;
-  margin-top: 30px;
-  margin-right: 70px; }
-
-.rules__headline-two {
-  margin-left: 21px; }
-
-.rules__list {
-  line-height: 24px;
-  padding-left: 21px;
-  margin-top: 20px; }
-
-.rules__list__cell {
-  margin-bottom: 10px;
-  list-style: none; }
-
-.rules__list__cell::before {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  margin-top: 6px;
-  margin-left: -21px;
-  background-color: rgba(31, 32, 65, 0.25); }
-
-.cancel {
-  display: inline-block;
-  max-width: 341px;
-  min-width: 320px;
-  vertical-align: top;
-  margin-top: 30px; }
-
-.cancel__text {
-  line-height: 24px;
-  margin-top: 20px; }
-
-.reservation {
+.registration {
   width: 380px;
-  height: 511px;
-  display: inline-block;
-  background: #FFFFFF;
+  height: 646px;
+  background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  vertical-align: top;
-  margin-top: 70px;
+  margin: 0 auto 0 auto; }
+
+.registration__headline {
+  width: 320px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 40px;
+  margin-left: 30px; }
+
+.registration__form__input-wrapper--name {
+  width: 320px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px; }
+
+.registration__form__input-wrapper--surname {
+  width: 320px;
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-left: 30px; }
+
+.regisration__form__label-radio--men {
+  width: 68px;
+  height: 24px;
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.75);
+  margin-top: 10.44px;
+  margin-left: 60px;
+  display: inline-block; }
+
+.regisration__form__label-radio--women {
+  width: 73px;
+  height: 24px;
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(31, 32, 65, 0.75);
+  margin-top: 10.44px;
+  margin-left: 49px;
+  display: inline-block; }
+
+.registration__form__subhead--burn {
+  height: 15px;
+  line-height: 15px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 30px; }
+
+.registration__form__input-wrapper--date-burn {
+  width: 320px;
+  margin-top: 5px;
+  margin-left: 30px; }
+
+.registration__form__subhead--login-info {
+  height: 15px;
+  line-height: 15px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-left: 30px; }
+
+.registration__form__input-wrapper--email, .registration__form__input-wrapper--password {
+  width: 320px;
+  margin-top: 5px;
+  margin-left: 30px;
+  margin-right: 30px; }
+
+.registration__form__input-wrapper--password {
+  margin-top: 10px; }
+
+.registration__form__toggle-label {
+  width: 210px;
+  height: 24px;
+  display: block;
+  margin-top: 10px;
+  margin-left: 80px; }
+
+.registration__form__button {
+  width: 320px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 30px;
   position: relative; }
 
-.reservation__subhead--number {
-  position: absolute;
-  top: 40px;
-  left: 30px;
-  width: 64px;
-  height: 30px;
-  line-height: 17px;
-  margin: 0px; }
-
-.subhead__number {
-  margin: 0px;
-  height: 30px;
-  font-size: 24px;
-  line-height: 30px; }
-
-.reservation__primary {
-  position: absolute;
-  top: 51px;
-  left: 99px; }
-
-.reservation__text--prise {
-  margin: 0px;
-  height: 20px;
-  color: rgba(31, 32, 65, 0.5);
-  top: 50px;
-  right: 30px;
-  position: absolute; }
-
-.reservation__subhead--arrival {
-  position: absolute;
-  margin: 0px;
-  top: 90px;
-  left: 30px; }
-
-.reservation__subhead--exit {
-  position: absolute;
-  margin: 0px;
-  top: 90px;
-  left: 200px; }
-
-.reservation__input-wrapper--arrival {
-  width: 150px;
-  position: absolute;
-  top: 110.44px;
-  left: 30px; }
-
-.reservation__input-wrapper--exit {
-  width: 150px;
-  position: absolute;
-  top: 110.44px;
-  left: 200px; }
-
-.reservation__subhead--guests {
-  position: absolute;
-  margin: 0px;
-  top: 174.44px;
-  left: 30px; }
-
-.reservation__drop-down {
-  width: 320px;
-  position: absolute;
-  top: 194.44px;
-  left: 30px; }
-
-.reservation__text--total-cost {
-  height: 24px;
-  line-height: 24px;
-  position: absolute;
-  top: 259px;
-  left: 31px; }
-
-.number--total-cost {
-  height: 24px;
-  line-height: 24px;
-  position: absolute;
-  top: 259px;
-  right: 30px; }
-
-.reservation__text--service-charge {
-  height: 24px;
-  width: 214px;
-  line-height: 24px;
-  position: absolute;
-  top: 293px;
-  left: 31px; }
-
-.reservation__text__info--service-charge {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 50%;
-  color: rgba(31, 32, 65, 0.25);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: bold;
+.registration__text {
+  height: 18px;
+  display: inline-block;
+  width: 186px;
   line-height: 18px;
-  top: 293px;
-  left: 250px;
-  text-align: center;
-  cursor: pointer; }
+  color: #000000;
+  margin-top: 42px;
+  margin-left: 30px; }
 
-.number--service-charge {
-  height: 24px;
-  position: absolute;
-  top: 293px;
-  right: 30px;
-  line-height: 24px; }
-
-.reservation__text--service-fee {
-  height: 24px;
-  width: 214px;
-  line-height: 18px;
-  position: absolute;
-  top: 327px;
-  left: 31px; }
-
-.reservation__text__info--service-fee {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 50%;
-  color: rgba(31, 32, 65, 0.25);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 18px;
-  top: 327px;
-  left: 250px;
-  text-align: center;
-  cursor: pointer; }
-
-.number--service-fee {
-  height: 24px;
-  position: absolute;
-  top: 327px;
-  right: 30px;
-  line-height: 24px; }
-
-.reservation__headline-two--total {
-  height: 24px;
-  line-height: 24px;
-  position: absolute;
-  top: 393px;
-  left: 31px; }
-
-.reservation__headline-two--total-number {
-  height: 24px;
-  line-height: 24px;
-  position: absolute;
-  top: 393px;
-  right: 30px; }
-
-.reservation__line-pointer {
-  width: 182px;
-  height: 1px;
-  border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
-  position: absolute;
-  top: 411px;
-  left: 91px; }
-
-.reservation__button {
-  width: 320px;
+.registration__button-default {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 35px;
+  vertical-align: top;
+  width: 99px;
   height: 44px;
-  position: absolute;
-  top: 437px;
-  left: 30px; }
+  line-height: 66px; }
 
-.reservation__button__icon--next {
-  background-image: url(../../images/arrow_forward_white.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 44px;
-  height: 44px;
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  margin: 0; }
-
-.calendar {
-  position: absolute;
-  z-index: 10;
-  top: 160px;
-  left: 30px;
-  display: none; }
+.registration__button-default__text {
+  margin-top: -35px; }
 
 .footer {
   max-width: 1920px;
@@ -1454,31 +1147,4 @@ q {
   min-width: 300px;
   margin: 0; }
 
-body {
-  padding: 0px;
-  margin: 0px; }
-
-button {
-  border: none;
-  cursor: pointer; }
-  button:focus {
-    outline: none; }
-
-input:focus {
-  outline: none; }
-
-::-webkit-input-placeholder {
-  color: rgba(31, 32, 65, 0.25); }
-
-::-moz-placeholder {
-  color: rgba(31, 32, 65, 0.25); }
-
-/* Firefox 19+ */
-:-moz-placeholder {
-  color: rgba(31, 32, 65, 0.25); }
-
-/* Firefox 18- */
-:-ms-input-placeholder {
-  color: rgba(31, 32, 65, 0.25); }
-
-/*# sourceMappingURL=page_3_Style.css.map */
+/*# sourceMappingURL=registration.css.map */
