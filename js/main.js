@@ -50,10 +50,10 @@ window.onload = function () {
     event.cancelBubble = true;
   };
 
-  document.onclick = function () {
-    calendar.style.display = 'none';
-    block = false;
-    }
+  // document.onclick = function () {
+  //   calendar.style.display = 'none';
+  //   block = false;
+  //   }
 
   datepicker.onclick = event => {
     minRange = d.minRange || d._focused;

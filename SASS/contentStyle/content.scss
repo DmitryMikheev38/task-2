@@ -30,12 +30,21 @@
   top: 70px;
 }
 
+.room-search__headline {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 320px;
+  letter-spacing: 1.1px;
+  
+}
+
 .room-search__subhead--arrival {
   line-height: 15px;
   width: 83px;
   height: 15px;
   display: block;
-  left: 30px;
+  left: 29px;
   position: absolute;
   top: 120px;
   margin: 0px;
@@ -46,36 +55,38 @@
   display: block;
   width: 83px;
   height: 15px;
-  right: 97px;
+  right: 96px;
   position: absolute;
   top: 120px;
   margin: 0px;
 }
 
 .room-search__subhead--guests {
-  left: 30px;
+  left: 29px;
   height: 15px;
-  top: 205px;
+  top: 204px;
   position: absolute;
   margin: 0px;
 }
 
 .input-wrapper--arrival, .input-wrapper--exit {
   position: absolute;
-  top: 140.44px;
+  top: 140px;
+  height: 43;
   width: 150px;
 }
 
 .input-wrapper--arrival {
   left: 30px;
+  width: 149px
 }
 
 .input-wrapper--exit {
-  right: 30px;
+  right: 29px;
 }
 
 .room-search__drop-down {
-  top: 226.44px;
+  top: 224px;
   left: 30px;
   position: absolute;
   width: 320px;
@@ -84,8 +95,8 @@
 
 .drop-down__list__button-empty--apply {
   position: absolute;
-  bottom: 13px;
-  right: 7px;
+  bottom: 14px;
+  right: 6px;
   padding: 0;
   color: $colorApply;
   background-color: #FFFFFF
@@ -98,16 +109,16 @@
 .drop-down__list__button-empty--clear {
   display: none;
   position: absolute;
-  bottom: 13px;
-  left: 14px;
+  bottom: 14px;
+  left: 7px;
   color: $colorClear;
 }
 
 .room-search__button {
   position: absolute;
-  bottom: 30px;
+  bottom: 29px;
   margin: 0px;
-  right: 30px;
+  right: 29px;
   width: 320px;
   height: 44px;
 }
@@ -127,8 +138,8 @@
 
 .content__text {
   position: absolute;
-  right: 0px;
-  bottom: 18px;
+  right: -3px;
+  bottom: 21px;
   width: 297px;
   height: 48px;
   text-align: right;

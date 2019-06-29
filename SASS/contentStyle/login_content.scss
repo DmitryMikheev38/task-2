@@ -1,0 +1,80 @@
+
+.content {
+  min-height: 702px;
+  max-width: $maxWidthPage;
+  min-width: $minWidthPage;
+  margin: 0px;
+  padding: 0px;
+  background: url(/images/registration.jpg), no-repeat;
+  background-size: cover;
+  
+}
+
+.content__wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthWrapper;
+  min-width: $minWidthPage;
+  min-height: 702px;
+  padding-top: 163px;
+  position: relative;
+}
+
+.login {
+  width: 380px;
+  height: 358px; 
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; 
+}
+
+.login__headline--enter {
+  margin: 39.5px 0 0 30px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}
+
+.login__form__input-wrapper--email, .login__form__input-wrapper--password {
+  width: 319px;
+  height: 43.5px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.login__form__input-wrapper--password {
+  margin-top: 10px;
+}
+
+.login__form__button {
+  width: 320px;
+  height: 44px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.login__text {
+  display: inline-block;
+  height: 18px;
+  color: #000000;
+  line-height: 18px;
+  margin-top: 43px;
+  margin-left: 30px;
+}
+
+.login__button-default {
+  display: inline-block;
+  vertical-align: top;
+  height: 44px;
+  width: 99px;
+  margin-top: 30px;
+  margin-left: 58px;
+}
+
+.login__button-default__text {
+  margin-top: -35px;
+
+}

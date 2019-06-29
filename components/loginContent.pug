@@ -1,0 +1,16 @@
+.content
+  .content__wrapper
+
+    .login
+      h1.headline.login__headline--enter Войти
+      form.login__form(method="post")
+        .input-wrapper.login__form__input-wrapper--email
+          input.input-wrapper__input(type='text' name='email' placeholder="Email")
+        .input-wrapper.login__form__input-wrapper--password
+          input.input-wrapper__input(type='password' name='password' placeholder="Пароль")
+        button.button.login__form__button Войти
+          span.button__icon.button__icon--next
+      
+      p.text.login__text Нет аккаунта на Toxin?
+      button.button-default.login__button-default
+        span.button-default__text.login__button-default__text Создать

@@ -82,6 +82,10 @@
   margin-right: 81px;
 }
 
+.intellingence__headline-two {
+  letter-spacing: 0.5px;
+}
+
 .intelligence__comfort, .intelligence__facilities, .intelligence__cosiness {
   width: 280px;
   height: 88px;
@@ -105,7 +109,7 @@
 
 .intelligence__comfort__subhead-two, .intelligence__facilities__subhead-two, .intelligence__cosiness__subhead-two {
   display: block;
-  margin-top: 23px;
+  margin-top: 20px;
   // margin-left: 10px;
   float: left;
   width: 210px;
@@ -148,6 +152,7 @@
   display: block;
 }
 
+
 .impressions {
   display: inline-block;
   position: relative;
@@ -163,6 +168,10 @@
   width: 120px;
   height: 120px;
   margin-top: 21px;
+}
+
+.impressions__headline-two {
+  letter-spacing: 0.7px;
 }
 
 .impressions__diagram__sumptuously {
@@ -240,15 +249,15 @@
 
 .impressions__diagram__primary {
   position: absolute;
-  top: 60px;
+  top: 65px;
   left: 28px;
 }
 
 .impressions__list {
   display: inline-block;
   position: absolute;
-  right: 0;
-  top: 74px;
+  right: -1px;
+  top: 71px;
   line-height: 24px;
   width: 146px;
   height: 96px;   
@@ -267,7 +276,7 @@
   height: 10px;
   border-radius: 50%;
   position: absolute;
-  margin-top: 6px;
+  margin-top: 7px;
   left: -15px;
 }
 
@@ -290,8 +299,11 @@
 .reviews {
   width: 100%;
   position: relative;
-  margin-top: 13px;
+  margin-top: 15px;
+}
 
+.reviews__headline-two {
+  letter-spacing: 0.6px;
 }
 
 .reviews__quantity-reviews {
@@ -302,6 +314,10 @@
 
 .reviews__person {
   margin-top: 20px;
+}
+
+.reviews__person:last-child {
+  margin-top: 23px;
 }
 
 .reviews__person__photo {
@@ -325,13 +341,12 @@
   background-image: url('/images/photo/photo2.jpg');
 }
 
-.reviews__person__name {
-  
+.reviews__person__name { 
   height: 48px;
   display: inline-block;
   vertical-align: top;
   line-height: 24px;
-  margin-left: 12px;
+  margin-left: 9px;
 }
 
 .reviews__like {
@@ -345,8 +360,8 @@
   position: relative;
   line-height: 12px;
   color: rgba(31, 32, 65, 0.25);
-  margin-top: 10px;
-  margin-left: 4px;
+  margin-top: 8px;
+  margin-left: 3px;
 }
 
 .reviews__like__icon {
@@ -376,7 +391,7 @@
   display: inline-block;
   max-width: 653px;
   margin-left: 58px;
-  margin-top: -20px;
+  margin-top: -22px;
   line-height: 24px;
 }
 
@@ -388,17 +403,20 @@
 }
 
 .rules__headline-two {
-  margin-left: 21px;
+  margin-left: 20px;
+  margin-top: 3px;
+  letter-spacing: 0.6px;
 }
 
 .rules__list {
-  line-height: 24px;
+  line-height: 22px;
   padding-left: 21px;
-  margin-top: 20px;
+  margin-top: 18px;
+  margin-left: -1px;
 }
 
 .rules__list__cell {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   list-style: none;
 }
 
@@ -423,9 +441,15 @@
   margin-top: 30px;
 }
 
+.cancel__headline-two {
+  margin-top: 3px;
+  letter-spacing: 0.6px;
+}
+
+
 .cancel__text {
   line-height: 24px;
-  margin-top: 20px;
+  margin-top: 17px;
 }
 
 .reservation {
@@ -443,10 +467,11 @@
 
 .reservation__subhead--number {
   position: absolute;
-  top: 40px;
+  top: 39px;
   left: 30px;
   width: 64px;
   height: 30px;
+  font-size: 14px;
   line-height: 17px;
   margin: 0px;
 }
@@ -468,7 +493,8 @@
   margin: 0px;
   height: 20px;
   color: rgba(31, 32, 65, 0.5);
-  top: 50px;
+  top: 49px;
+  font-size: 12px;
   right: 30px;
   position: absolute;
 }
@@ -476,15 +502,15 @@
 .reservation__subhead--arrival {
   position: absolute;
   margin: 0px;
-  top: 90px;
-  left: 30px;
+  top: 89px;
+  left: 29px;
 }
 
 .reservation__subhead--exit {
   position: absolute;
   margin: 0px;
-  top: 90px;
-  left: 200px;
+  top: 89px;
+  left: 199px;
 }
 
 .reservation__input-wrapper--arrival {
@@ -504,8 +530,8 @@
 .reservation__subhead--guests {
   position: absolute;
   margin: 0px;
-  top: 174.44px;
-  left: 30px;
+  top: 173px;
+  left: 29px;
 }
 
 .reservation__drop-down {
@@ -519,15 +545,15 @@
   height: 24px;
   line-height: 24px;
   position: absolute;
-  top: 259px;
-  left: 31px;
+  top: 255px;
+  left: 29.5px;
 }
 
 .number--total-cost {
   height: 24px;
   line-height: 24px;
   position: absolute;
-  top: 259px;
+  top: 255px;
   right: 30px;
 }
 
@@ -536,8 +562,8 @@
   width: 214px;
   line-height: 24px;
   position: absolute;
-  top: 293px;
-  left: 31px;
+  top: 290px;
+  left: 30px;
 }
 
 .reservation__text__info--service-charge {
@@ -549,7 +575,7 @@
   color: rgba(31, 32, 65, 0.25);
   @include montserrat(12px, bold, normal);
   line-height: 18px;
-  top: 293px;
+  top: 290px;
   left: 250px;
   text-align: center;
   cursor: pointer;
@@ -558,7 +584,7 @@
 .number--service-charge {
   height: 24px;
   position: absolute;
-  top: 293px;
+  top: 290px;
   right: 30px;
   line-height: 24px;
 }
@@ -568,7 +594,7 @@
   width: 214px;
   line-height: 18px;
   position: absolute;
-  top: 327px;
+  top: 326px;
   left: 31px;
 }
 
@@ -581,7 +607,7 @@
   color: rgba(31, 32, 65, 0.25);
   @include montserrat(12px, bold, normal);
   line-height: 18px;
-  top: 327px;
+  top: 326px;
   left: 250px;
   text-align: center;
   cursor: pointer;
@@ -590,7 +616,7 @@
 .number--service-fee {
   height: 24px;
   position: absolute;
-  top: 327px;
+  top: 323px;
   right: 30px;
   line-height: 24px;
 }
@@ -601,13 +627,14 @@
   position: absolute;
   top: 393px;
   left: 31px;
+  letter-spacing: 0.5px;
 }
 
 .reservation__headline-two--total-number {
   height: 24px;
   line-height: 24px;
   position: absolute;
-  top: 393px;
+  top: 392px;
   right: 30px;
 }
 
@@ -624,8 +651,8 @@
   width: 320px;
   height: 44px;
   position: absolute;
-  top: 437px;
-  left: 30px;
+  top: 436px;
+  left: 29px;
 }
 
 .reservation__button__icon--next {
