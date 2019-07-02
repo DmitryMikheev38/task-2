@@ -48,9 +48,41 @@
 .copyright__text {
   position: absolute;
   top: 26px;
-  height: 18px;
   display: block;
-  max-width: 367px;
-  min-width: 300px;
   margin: 0;
+}
+
+@media (max-width: 1160px) {
+  .copyright__wrapper {
+    padding: 0 15px 30px 15px;
+  }
+  
+}
+
+@media (max-width: 530px) {
+  .social-networks {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .copyright__text {
+    display: block;
+    float: none;
+    position: relative;
+    margin-bottom: 50px;
+   
+  }
+}
+
+@media (max-width: 460px) {
+  .copyright__text {
+    margin-left: 45px;
+  }
+
+  .social-networks {
+    margin-left: 45px;
+  }
+
 }

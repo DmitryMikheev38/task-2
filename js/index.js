@@ -17,6 +17,22 @@ window.onload = function () {
   var sumGuests = document.querySelector('.room-search__drop-down .drop-down__input');
   var dropDownClear = document.querySelector('.drop-down__list__button-empty--clear');
   var subscriptionInput = document.querySelector('.subscription__input-wrapper .input-wrapper__input');
+  var enterButton = document.querySelector('.header__button-default');
+  var registrationButton = document.querySelector('.header__button');
+  var roomSearchButton = document.querySelector('.room-search__button');
+
+  enterButton.onclick = function () {
+    window.location.href = 'pages/login.html'
+  };
+
+  registrationButton.onclick = function () {
+    window.location.href = 'pages/registration.html'
+  }
+
+  roomSearchButton.onclick = function () {
+    window.location.href = 'pages/page_2.html'
+  }
+
   
   function pad(n) {
     if (n < 10)
@@ -27,11 +43,17 @@ window.onload = function () {
   let block = false;
   arrivalButton = document.querySelector('.input-wrapper--arrival').childNodes[1];
   arrivalButton.onclick = function (event) {
+    var arrival = document.querySelector('.input-wrapper--arrival').childNodes[1];
+    var exit = document.querySelector('.input-wrapper--exit').childNodes[1];
     if (!block) {
       calendar.style.display = 'block';
+      arrival.style.transform = 'rotate(180deg)';
+      exit.style.transform = 'rotate(180deg)';
       block = true;
     } else if (block) {
       calendar.style.display = 'none';
+      arrival.style.transform = 'rotate(0deg)';
+      exit.style.transform = 'rotate(0deg)';
       block = false;
     }  
     event.cancelBubble = true;
@@ -50,10 +72,6 @@ window.onload = function () {
     event.cancelBubble = true;
   };
 
-  // document.onclick = function () {
-  //   calendar.style.display = 'none';
-  //   block = false;
-  //   }
 
   datepicker.onclick = event => {
     minRange = d.minRange || d._focused;
@@ -87,15 +105,54 @@ window.onload = function () {
   calendarButtonClear.classList = "button-empty calendar__button-empty--clear";
   calendarButtonApply.classList = "button-empty calendar__button-empty--apply"
 
+  calendarButtonApply.onclick = () => {
+    calendar.style.display = 'none';
+    var arrival = document.querySelector('.input-wrapper--arrival').childNodes[1];
+    var exit = document.querySelector('.input-wrapper--exit').childNodes[1];
+    arrival.style.transform = 'rotate(0deg)';
+    exit.style.transform = 'rotate(0deg)';
+    block = false;
+  }
+
+  calendarButtonClear.onclick = (event) => {
+    arrival.setAttribute('value', '');
+    exit.setAttribute('value', '');
+    var cellDay = datepicker.querySelectorAll('.datepicker--cell-day');
+    var current = datepicker.querySelector('.-current-');
+    var currentDay = current.getAttribute('data-date');
+    var currentMonth = current.getAttribute('data-month');
+    var currentYear = current.getAttribute('data-year');
+
+
+    for (let i = 0; i < cellDay.length; i++) {
+      var day = cellDay[i].getAttribute('data-date');
+      console.log(cellDay[i].getAttribute('data-date'))
+      var month = cellDay[i].getAttribute('data-month');
+      var year = cellDay[i].getAttribute('data-year');
+      if (currentDay == day && currentMonth == month && currentYear == year) {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day -current-';
+      } else {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day';
+      }
+      }
+      
+      d.minRange = NaN;
+      d.maxRange = NaN;
+    event.cancelBubble = true;
+  }
+
   inputSelector.onclick = () => {
     var select = document.querySelector('.drop-down');
-    var attributeStyle = select.getAttribute('style');
-    if (attributeStyle === null) {
+    var button = select.childNodes[1];
+    var attributeStyle = select.style.height;
+    if (attributeStyle !== '203px') {
       select.style.height = "203px";
       select.style.borderColor="rgba(31, 32, 65, 0.5)";
-      select.style.boxShadow = "0px 10px 20px rgba(31, 32, 65, 0.05)";    
+      select.style.boxShadow = "0px 10px 20px rgba(31, 32, 65, 0.05)";  
+      button.style.transform = 'rotate(180deg)';  
     } else if (select.style.height === "203px"){
       select.removeAttribute('style');
+      button.style.transform = 'rotate(0deg)';
     }
   }
 
@@ -105,13 +162,16 @@ window.onload = function () {
       let adult = sumGuests.getAttribute('value').split(',')[0];
       let val = adult.split(' ')[0]
       let attr = Number(val);
-      console.log(adult);
 
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+      if (spanValue > 0) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       attr++;
       let adult = attr;
+
       let lastNum = Number(attr.toString().slice(-1))
       let sign = ' гостей';
       if (attr > 10 && attr < 20) {
@@ -131,6 +191,9 @@ window.onload = function () {
       sumGuests.setAttribute('value', adult + sign + comma + baby);
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      if (spanValue == 0) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       attr--;
       let lastNum = Number(attr.toString().slice(-1))
@@ -171,6 +234,9 @@ window.onload = function () {
     let comm = ', ';
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+      if (spanValue > 0) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       let sign = ' младенцев';
       if (spanValue > 9 && spanValue < 21) {
@@ -186,6 +252,9 @@ window.onload = function () {
       sumGuests.setAttribute('value', adult + comm + spanValue + sign);
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      if (spanValue == 0) {
+        e.target.parentNode.children[2].setAttribute('disabled', '');
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       let sign = ' младенцев';
       if (spanValue > 9 && spanValue < 21) {
@@ -228,8 +297,28 @@ window.onload = function () {
     subscriptionInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.5)";
   }
 
+  var dropDownInput = document.querySelector('.drop-down').childNodes[0];
+
+  dropDownInput.onfocus = function () {
+    dropDownInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.5)";
+  }
+
   subscriptionInput.onblur = () => {
     subscriptionInput.parentNode.removeAttribute('style');
+  }
+
+  dropDownInput.onblur = function () {
+    if (dropDownInput.parentNode.style.height === '203px') return
+    dropDownInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.25)";
+  }
+
+  var dropDownApply = document.querySelector ('.drop-down__list__button-empty--apply ');
+  dropDownApply.onclick = () => {
+    var select = document.querySelector('.drop-down');
+    var button = select.childNodes[1];
+    select.removeAttribute('style');
+    button.style.transform = 'rotate(0deg)';
+
   }
 }
 

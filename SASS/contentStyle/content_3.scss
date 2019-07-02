@@ -675,3 +675,55 @@
   left: 30px;
   display: none;
 }
+.reviews__like {
+  cursor: pointer;
+}
+
+.reviews__like[checked] {
+  border: 1px solid #BC9CFF;
+  color: #BC9CFF;
+}
+
+.reviews__like[checked] .reviews__like__icon {
+  background-image: url('/images/favorite.svg');
+}
+
+@media (max-width: 1160px) {
+  .content__wrapper {
+    padding: 0 15px 0 15px;
+    
+  }
+
+  .reservation {
+    margin-bottom: 70px;
+  }
+} 
+
+@media (max-width: 460px) {
+  .intelligence, .impressions, .reviews, .rules, .cancel, .room-info {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rules {
+    margin-left: 30px;
+  }
+
+  .cancel {
+    margin-left: 50px;
+  }
+
+  .cancel__text {
+    width: 250px;
+  }
+
+  .reservation {
+    margin: 70px 0 70px -15px;
+  }
+
+  .reviews__quantity-reviews {
+    display: block;
+    position: relative;
+  }
+}

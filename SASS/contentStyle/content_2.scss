@@ -278,6 +278,49 @@
   letter-spacing: 0.15px;
 }
 
+@media (max-width: 1160px) {
+  .content__wrapper {
+    padding: 0 15px 0 15px;
+    
+  }
+}
+
+@media (max-width: 460px) {
+  .content__wrapper {
+    display: block;
+  }
+
+  .cards-list {
+    display: block;
+    width: 272px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+  }
+
+  .room-cards {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .selection-room {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .calendar {
+    left: -25px;
+  }
+  
+}
+
 
 
 

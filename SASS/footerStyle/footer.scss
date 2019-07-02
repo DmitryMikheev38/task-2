@@ -84,3 +84,22 @@ q {
 .navigation__subhead, .about-us__subhead, .support__subhead, .subscription__subhead {
   margin: 0;
 }
+
+@media (max-width: 1160px) {
+  .footer__wrapper {
+    padding: 0 15px 30px 15px;
+  }
+  
+}
+
+
+@media (max-width: 460px) {
+  .best-hotel, .navigation, .about-us, .support, .subscription {
+    display: block;
+    margin: 0 0 40px 60px;
+  }
+
+  .footer__wrapper {
+    padding:  60px 0 15px;
+  }
+}

@@ -165,3 +165,18 @@
 }
 
 
+@media (max-width: 1160px) {
+  .content__wrapper {
+    padding: 0 15px 0 15px;
+  }
+
+  .content__text {
+    right: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .content__wrapper {
+    padding-left: 0px;
+  }
+}

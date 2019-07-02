@@ -141,6 +141,10 @@
   background: #FFFFFF;
 }
 
+.drop-down:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
 .drop-down__input {
   border: none;
   border-radius: 4px;
@@ -203,6 +207,9 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 22px;
   background-color: #FFFFFF;
+  color: rgba(31, 32, 65, 0.5);
+  @include montserrat(18px, normal, normal);
+  line-height: 22px;
 }
 
 .drop-down__list__button--max, .drop-down__list__number, .drop-down__list__button--min {
@@ -210,16 +217,19 @@
 }
 
 .drop-down__list__button--max {
-  background-image: url('../../images/+.svg');
   background-repeat: no-repeat;
   background-position: center; 
   margin-right: 5.5px;
 }
 
 .drop-down__list__button--min {
-  background-image: url('../../images/-.svg');
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
+}
+
+.drop-down__list__button--min:disabled {
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  color: rgba(31, 32, 65, 0.1);
 }
 
 .drop-down__list__number {
@@ -430,6 +440,7 @@
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  cursor: pointer;
 }
 
 .slider-card {
@@ -782,6 +793,15 @@
   display: block;
 }
 
+.radio:checked + .regisration__form__label-radio--men {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.radio:checked + .regisration__form__label-radio--women {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+
 .radio:checked + .label-radio::before {
   border: 1px solid #BC9CFF;
 }
@@ -863,3 +883,4 @@
 .button__icon--next  {
   background-image: url(../../images/arrow_forward_white.svg);
 }
+

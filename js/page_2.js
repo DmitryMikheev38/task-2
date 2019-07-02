@@ -31,6 +31,7 @@ window.onload = function () {
   let comfortList = document.querySelector('.selection-room__comfort-list');
 
 
+
   rooms = [
     { images: 'url(/images/rooms/image1.jpg)',
       number: 888,
@@ -147,6 +148,14 @@ window.onload = function () {
     e.cancelBubble = true;
   }
 
+  selectDate.childNodes[0].onfocus = function () {
+    selectDate.style.borderColor = "rgba(31, 32, 65, 0.5)";
+  }
+
+  selectDate.childNodes[0].onblur = () => {
+    selectDate.removeAttribute('style');
+  }
+
   var calendarButtonClear = document.createElement('button');
   var calendarButtonApply = document.createElement('button');
   calendarButtonClear.innerHTML = "очистить";
@@ -164,7 +173,28 @@ window.onload = function () {
 
   calendarButtonClear.onclick = (event) => {
     selectDate.children[0].removeAttribute('value');
-    event.cancelBubble = true;  
+    var cellDay = datepicker.querySelectorAll('.datepicker--cell-day');
+    var current = datepicker.querySelector('.-current-');
+    var currentDay = current.getAttribute('data-date');
+    var currentMonth = current.getAttribute('data-month');
+    var currentYear = current.getAttribute('data-year');
+
+
+    for (let i = 0; i < cellDay.length; i++) {
+      var day = cellDay[i].getAttribute('data-date');
+      console.log(cellDay[i].getAttribute('data-date'))
+      var month = cellDay[i].getAttribute('data-month');
+      var year = cellDay[i].getAttribute('data-year');
+      if (currentDay == day && currentMonth == month && currentYear == year) {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day -current-';
+      } else {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day';
+      }
+      }
+      
+      d.minRange = NaN;
+      d.maxRange = NaN;
+    event.cancelBubble = true;
   }
 
   minPrise.innerHTML = sliderLp.children[0].innerHTML + " 000";
@@ -178,6 +208,15 @@ window.onload = function () {
       maxPrise.innerHTML = maxvalue;
     }
     
+  }
+
+  var dropDownApply = document.querySelector ('.drop-down__list__button-empty--apply ');
+  dropDownApply.onclick = () => {
+    var select = document.querySelector('.drop-down');
+    var button = select.childNodes[1];
+    select.removeAttribute('style');
+    button.style.transform = 'rotate(0deg)';
+
   }
 
   sliderRp.onmousedown = () => {
@@ -213,10 +252,10 @@ window.onload = function () {
   }
 
   let buttonGuests = dropDownGuests.children[1];
-  buttonGuests.onclick = () => {
+  buttonGuests.onclick = (e) => {
     let select = dropDownGuests;
-    let attributeStyle = select.getAttribute('style');
-    if (attributeStyle === null) {
+    var attributeStyle = select.style.height;;
+    if (attributeStyle  !== '203px') {
       buttonGuests.style.transform = 'rotate(180deg)';
       select.style.height = "203px";
       select.style.borderColor="rgba(31, 32, 65, 0.5)";
@@ -233,11 +272,13 @@ window.onload = function () {
       let adult = sumGuests.getAttribute('value').split(',')[0];
       let val = adult.split(' ')[0]
       let attr = Number(val);
-      console.log(adult);
 
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
       e.target.parentNode.children[1].innerHTML = spanValue;
+      if (spanValue > 0) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       attr++;
       let adult = attr;
       let lastNum = Number(attr.toString().slice(-1))
@@ -259,7 +300,11 @@ window.onload = function () {
       sumGuests.setAttribute('value', adult + sign + comma + baby);
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      if (spanValue == 0) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
+      
       attr--;
       let lastNum = Number(attr.toString().slice(-1))
       let sign = ' гостей';
@@ -299,6 +344,9 @@ window.onload = function () {
     let comm = ', ';
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) >= 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) + 1;
+      if (spanValue > 0) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       let sign = ' младенцев';
       if (spanValue > 9 && spanValue < 21) {
@@ -314,6 +362,9 @@ window.onload = function () {
       sumGuests.setAttribute('value', adult + comm + spanValue + sign);
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 0) {
       let spanValue = Number(e.target.parentNode.children[1].innerHTML) - 1;
+      if (spanValue == 0) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       e.target.parentNode.children[1].innerHTML = spanValue;
       let sign = ' младенцев';
       if (spanValue > 9 && spanValue < 21) {
@@ -387,6 +438,9 @@ window.onload = function () {
 
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) < 10) {
       let spanValue = Number(cellBedRooms.children[1].innerHTML) + 1;
+      if (spanValue > 1) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       cellBedRooms.children[1].innerHTML = spanValue;
       
       let newRoomsValue = spanValue + ' спальня,';
@@ -402,6 +456,9 @@ window.onload = function () {
       rooms.setAttribute('value', newRoomsValue + bedsValue + ',' + bathRomsValue );
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 1) {
       let spanValue = Number(cellBedRooms.children[1].innerHTML) - 1;
+      if (spanValue == 1) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       cellBedRooms.children[1].innerHTML = spanValue;
       let newRoomsValue = spanValue + ' спальня,';
 
@@ -428,6 +485,9 @@ window.onload = function () {
 
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) < 10) {
       let spanValue = Number(cellBeds.children[1].innerHTML) + 1;
+      if (spanValue > 1) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       cellBeds.children[1].innerHTML = spanValue;
       
       let newBedsValue = spanValue + ' кровать,';
@@ -443,6 +503,9 @@ window.onload = function () {
       rooms.setAttribute('value', bedRoomsValue + ', ' + newBedsValue + bathRomsValue );
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 1) {
       let spanValue = Number(cellBeds.children[1].innerHTML) - 1;
+      if (spanValue == 1) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       cellBeds.children[1].innerHTML = spanValue;
       let newBedsValue = spanValue + ' кровать, ';
 
@@ -469,6 +532,9 @@ window.onload = function () {
 
     if (e.target.className === 'drop-down__list__button drop-down__list__button--max' && Number(e.target.parentNode.children[1].innerHTML) < 10) {
       let spanValue = Number(cellBathRooms.children[1].innerHTML) + 1;
+      if (spanValue > 1) {
+        e.target.parentNode.children[2].removeAttribute('disabled');
+      }
       cellBathRooms.children[1].innerHTML = spanValue;
       
       let newBathValue = spanValue + ' ванная';
@@ -484,6 +550,9 @@ window.onload = function () {
       rooms.setAttribute('value', bedRoomsValue + ',' + bedsValue + ', ' + newBathValue );
     } else if (e.target.className === 'drop-down__list__button drop-down__list__button--min' && Number(e.target.parentNode.children[1].innerHTML) > 1) {
       let spanValue = Number(cellBathRooms.children[1].innerHTML) - 1;
+      if (spanValue == 1) {
+        e.target.parentNode.children[2].setAttribute('disabled', '')
+      }
       cellBathRooms.children[1].innerHTML = spanValue;
       
       let newBathValue = spanValue + ' ванная';
@@ -543,8 +612,6 @@ window.onload = function () {
      clonebutton.setAttribute('id', i);
      buttonGroup.appendChild(clonebutton);
     }
-
-    cloneCard.childNodes
     
     roomCards.appendChild(cloneCard)
   }
@@ -599,21 +666,60 @@ window.onload = function () {
 
     
       
-      docButtonGroup[i].addEventListener("click", function (e) {
-        if (e.target.tagName !== 'BUTTON') return;
-        for (let i = 0; i < e.target.parentNode.children.length; i++) {
-          e.target.parentNode.children[i].style.backgroundColor = 'transparent';
-        }
-  
-        e.target.style.backgroundColor = 'white';
-        let traslate = 270;
-        let targetIndex = Number(e.target.getAttribute('id'));
-          e.target.parentNode.parentNode.children[3].style.transform = 'translate(-' + traslate*targetIndex+ 'px)';
-          imageIndex = targetIndex;
-      })
-    
+    docButtonGroup[i].addEventListener("click", function (e) {
+      if (e.target.tagName !== 'BUTTON') return;
+      for (let i = 0; i < e.target.parentNode.children.length; i++) {
+        e.target.parentNode.children[i].style.backgroundColor = 'transparent';
+      }
+      
+      e.target.style.backgroundColor = 'white';
+      let traslate = 270;
+      let targetIndex = Number(e.target.getAttribute('id'));
+      e.target.parentNode.parentNode.children[3].style.transform = 'translate(-' + traslate*targetIndex+ 'px)';
+      imageIndex = targetIndex;
+    })
+  }
 
- 
+  var dropDownInput = document.querySelector('.drop-down').childNodes[0];
+
+  dropDownInput.onfocus = function () {
+    dropDownInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.5)";
+  }
+
+  dropDownBed.childNodes[0].onfocus = function () {
+    dropDownBed.style.borderColor = "rgba(31, 32, 65, 0.5)";
+  }
+
+  dropDownBed.childNodes[0].onblur = function () {
+    dropDownBed.removeAttribute('style');
+  }
+
+  subscriptionInput.onblur = () => {
+    subscriptionInput.parentNode.removeAttribute('style');
+  }
+
+  dropDownInput.onblur = function () {
+    if (dropDownInput.parentNode.style.height === '203px') return
+    dropDownInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.25)";
+  }
+
+  var cards = document.querySelectorAll('.card');
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].onclick = (e) => {
+      if (e.target.tagName == 'BUTTON' || e.target.tagName == 'IMG') return
+      window.location.href = 'page_3.html';
+    }
+  }
+
+  var enterButton = document.querySelector('.header__button-default');
+  var registrationButton = document.querySelector('.header__button');
+
+  enterButton.onclick = function () {
+    window.location.href = 'login.html'
+  };
+
+  registrationButton.onclick = function () {
+    window.location.href = 'registration.html'
   }
 
 }

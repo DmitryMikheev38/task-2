@@ -61,7 +61,7 @@
           .reviews__person__name
             h3.subhead-two.reviews__person__name--one Мурад Сарафанов
             p.text.reviews__person__name__past--one 5 дней назад
-          .reviews__like.reviews__like--one
+          .reviews__like.reviews__like--one(checked)
             span.reviews__like__icon
             span.reviews__like__number.reviews__like__number--one 12
           p.text.reviews__person__text
@@ -124,17 +124,17 @@
         .drop-down__list
           ul.drop-down__list__ul
             li.subhead.drop-down__list__cells.drop-down__list__cells--adult Взрослые
-              button.drop-down__list__button.drop-down__list__button--max
+              button.drop-down__list__button.drop-down__list__button--max +
               span.drop-down__list__number 0
-              button.drop-down__list__button.drop-down__list__button--min
+              button.drop-down__list__button.drop-down__list__button--min(disabled) -
             li.subhead.drop-down__list__cells.drop-down__list__cells--children Дети
-              button.drop-down__list__button.drop-down__list__button--max
+              button.drop-down__list__button.drop-down__list__button--max +
               span.drop-down__list__number 0
-              button.drop-down__list__button.drop-down__list__button--min
+              button.drop-down__list__button.drop-down__list__button--min(disabled) -
             li.subhead.drop-down__list__cells.drop-down__list__cells--baby Младенцы
-              button.drop-down__list__button.drop-down__list__button--max
+              button.drop-down__list__button.drop-down__list__button--max +
               span.drop-down__list__number 0
-              button.drop-down__list__button.drop-down__list__button--min
+              button.drop-down__list__button.drop-down__list__button--min(disabled) -
           button.button-empty.drop-down__list__button-empty--clear Очистить
           button.button-empty.drop-down__list__button-empty--apply Применить
 

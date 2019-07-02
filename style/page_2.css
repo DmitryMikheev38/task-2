@@ -206,6 +206,9 @@ html {
   z-index: 1;
   background: #FFFFFF; }
 
+.drop-down:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5); }
+
 .drop-down__input {
   border: none;
   border-radius: 4px;
@@ -264,21 +267,29 @@ html {
   margin-top: 1.5px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 22px;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  color: rgba(31, 32, 65, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px; }
 
 .drop-down__list__button--max, .drop-down__list__number, .drop-down__list__button--min {
   float: right; }
 
 .drop-down__list__button--max {
-  background-image: url("../../images/+.svg");
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 5.5px; }
 
 .drop-down__list__button--min {
-  background-image: url("../../images/-.svg");
   background-repeat: no-repeat;
   background-position: center; }
+
+.drop-down__list__button--min:disabled {
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  color: rgba(31, 32, 65, 0.1); }
 
 .drop-down__list__number {
   float: right;
@@ -476,7 +487,8 @@ html {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
-  -o-border-radius: 4px; }
+  -o-border-radius: 4px;
+  cursor: pointer; }
 
 .slider-card {
   height: 152px;
@@ -948,6 +960,30 @@ html {
   width: 24px;
   height: 21px; }
 
+@media (max-width: 1160px) {
+  .header__wrapper {
+    padding: 0 15px 0 15px; } }
+@media (max-width: 460px) {
+  .header__button, .header__button-default, .menu__button, .header__logo {
+    float: none;
+    display: block; }
+
+  .header__logo {
+    margin-left: auto;
+    margin-right: auto; }
+
+  .menu__button {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center; }
+
+  .header__button-default, .header__button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; }
+
+  .header__wrapper {
+    padding: 0 30px 15px 30px; } }
 .content {
   min-height: 1230px;
   max-width: 1920px;
@@ -1181,6 +1217,37 @@ html {
   margin-bottom: 20px;
   letter-spacing: 0.15px; }
 
+@media (max-width: 1160px) {
+  .content__wrapper {
+    padding: 0 15px 0 15px; } }
+@media (max-width: 460px) {
+  .content__wrapper {
+    display: block; }
+
+  .cards-list {
+    display: block;
+    width: 272px;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center; }
+
+  .room-cards {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .selection-room {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .calendar {
+    left: -25px; } }
 .footer {
   max-width: 1920px;
   min-width: 320px;
@@ -1252,6 +1319,16 @@ q {
 .navigation__subhead, .about-us__subhead, .support__subhead, .subscription__subhead {
   margin: 0; }
 
+@media (max-width: 1160px) {
+  .footer__wrapper {
+    padding: 0 15px 30px 15px; } }
+@media (max-width: 460px) {
+  .best-hotel, .navigation, .about-us, .support, .subscription {
+    display: block;
+    margin: 0 0 40px 60px; }
+
+  .footer__wrapper {
+    padding: 60px 0 15px; } }
 .copyright {
   max-width: 1920px;
   min-width: 320px;
@@ -1294,12 +1371,30 @@ q {
 .copyright__text {
   position: absolute;
   top: 26px;
-  height: 18px;
   display: block;
-  max-width: 367px;
-  min-width: 300px;
   margin: 0; }
 
+@media (max-width: 1160px) {
+  .copyright__wrapper {
+    padding: 0 15px 30px 15px; } }
+@media (max-width: 530px) {
+  .social-networks {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto; }
+
+  .copyright__text {
+    display: block;
+    float: none;
+    position: relative;
+    margin-bottom: 50px; } }
+@media (max-width: 460px) {
+  .copyright__text {
+    margin-left: 45px; }
+
+  .social-networks {
+    margin-left: 45px; } }
 body {
   padding: 0px;
   margin: 0px; }

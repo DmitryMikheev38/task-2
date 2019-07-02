@@ -57,15 +57,76 @@ var view = {
       dropDownClear.style.display = 'none';
     }
   },
-  
-  showFocus () {
-    var emailInput = document.querySelector('.subscription__input-wrapper .input-wrapper__input');
-    emailInput.parentNode.style.borderColor = "rgba(31, 32, 65, 0.5)";
+
+  showFocus(el) {
+    el.style.borderColor = "rgba(31, 32, 65, 0.5)";
   },
 
-  delleteFocus () {
-    var emailInput = document.querySelector('.subscription__input-wrapper .input-wrapper__input');
-    emailInput.parentNode.removeAttribute('style');
+  delleteFocus (el) {
+    el.removeAttribute('style');
+  },
+
+  clearDatePicker (event) {
+    arrival = document.querySelector('.reservation__input-wrapper--arrival').childNodes[0];
+    exit = document.querySelector('.reservation__input-wrapper--exit').childNodes[0];
+    arrival.setAttribute('value', '');
+    exit.setAttribute('value', '');
+    var d =  $('.calendar').data('datepicker');
+    var datepicker = document.querySelector('.datepicker');
+    var cellDay = datepicker.querySelectorAll('.datepicker--cell-day');
+    var current = datepicker.querySelector('.-current-');
+    var currentDay = current.getAttribute('data-date');
+    var currentMonth = current.getAttribute('data-month');
+    var currentYear = current.getAttribute('data-year');
+
+
+    for (let i = 0; i < cellDay.length; i++) {
+      var day = cellDay[i].getAttribute('data-date');
+      var month = cellDay[i].getAttribute('data-month');
+      var year = cellDay[i].getAttribute('data-year');
+      if (currentDay == day && currentMonth == month && currentYear == year) {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day -current-';
+      } else {
+        cellDay[i].className = 'datepicker--cell datepicker--cell-day';
+      }
+      }
+      
+      d.minRange = NaN;
+      d.maxRange = NaN;
+    event.cancelBubble = true;
+  },
+
+  disabledButton(value, el) {
+    if (value > 0) {
+      el.removeAttribute('disabled');
+    } else {
+      el.setAttribute('disabled', '')
+    }
+  },
+
+  clearInputValue(el) {
+    el.setAttribute('value', '')
+  },
+
+  clearDrodownSpanValue() {
+    var el = document.querySelectorAll('.drop-down__list__number');
+    for (let i = 0; i < el.length; i++ ) {
+      el[i].innerHTML = 0;
+    }
+  },
+
+  changeLocation(url) {
+    window.location.href = url;
+  },
+
+  showChangeLike (e) {
+    if (e.currentTarget.getAttribute('checked') !== null) {
+      e.currentTarget.removeAttribute('checked')
+      e.currentTarget.childNodes[1].innerHTML--
+    } else {
+      e.currentTarget.setAttribute('checked', '');
+      e.currentTarget.childNodes[1].innerHTML++
+    }
   }
 
 }
@@ -116,7 +177,7 @@ var model = {
   },
 
   calculateSelect(select) {
-    if (select.getAttribute('style') === null) {
+    if (select.style.height !== '203px') {
       return true
     } else if (select.style.height === "203px"){
       return false
@@ -277,20 +338,94 @@ var controller = {
     var sumGuests = document.querySelector('.drop-down').childNodes[0];
     view.showGuests(model.computedGuests(e, sumGuests));
     view.showButtomClear(model.computedClearButton(sumGuests));
+
+    let spanValue = Number(e.target.parentNode.children[1].innerHTML);
+    let el = e.target.parentNode.children[2];
+    view.disabledButton(spanValue, el);
   },
 
   addBabyClick(e) {
     var sumGuests = document.querySelector('.drop-down').childNodes[0];
     view.showGuests(model.computedBaby(e, sumGuests));
     view.showButtomClear(model.computedClearButton(sumGuests));
+
+    let spanValue = Number(e.target.parentNode.children[1].innerHTML);
+    let el = e.target.parentNode.children[2];
+    view.disabledButton(spanValue, el);
   },
 
-  inputFocus() {
-    view.showFocus ();
+  inputFocusEmail() {
+    var el = document.querySelector('.subscription__input-wrapper .input-wrapper__input').parentNode;
+    view.showFocus (el);
   },
 
   outputFocus () {
-    view.delleteFocus ();
+    var el = document.querySelector('.subscription__input-wrapper .input-wrapper__input').parentNode;
+    view.delleteFocus (el);
+  },
+
+  clearClick(e) {
+    view.clearDatePicker(e)
+  },
+
+  inputFocusArrival() {
+    var el = document.querySelector('.reservation__input-wrapper--arrival');
+    view.showFocus(el)
+  },
+
+  outputFocusArrival() {
+    var el = document.querySelector('.reservation__input-wrapper--arrival');
+    view.delleteFocus (el);
+  },
+
+  inputFocusExit() {
+    var el = document.querySelector('.reservation__input-wrapper--exit');
+    view.showFocus(el)
+  },
+
+  outputFocusExit() {
+    var el = document.querySelector('.reservation__input-wrapper--exit');
+    view.delleteFocus (el);
+  },
+
+  inputFocusGuests() {
+    var el = document.querySelector('.drop-down');
+    view.showFocus(el)
+  },
+
+  outputFocusGuests() {
+    var el = document.querySelector('.drop-down');
+    view.delleteFocus (el);
+  },
+
+  clearGuestsClick() {
+    var inputGuest = document.querySelector('.drop-down').childNodes[0];
+    var minButton = document.querySelectorAll('.drop-down__list__button--min')
+    view.clearInputValue(inputGuest)
+    for (let i = 0; i < minButton.length; i++) {
+      view.disabledButton(0, minButton[i])
+    }
+    view.clearDrodownSpanValue();
+    view.showButtomClear(false);
+    
+  },
+
+  guestsApplyClick() {
+    var dropDownButton = document.querySelector('.drop-down').childNodes[1];
+    view.openSelect(false);
+    view.rotateButton(false, dropDownButton)
+  },
+
+  changeLocationReg() {
+    view.changeLocation('registration.html')
+  },
+
+  changeLocationEnter() {
+    view.changeLocation('login.html')
+  },
+
+  changeLike(e) {
+    view.showChangeLike (e)
   }
 }
 
@@ -337,15 +472,39 @@ var controller = {
         var babyCell = document.querySelector('.drop-down__list__cells--baby');
         var emailInput = document.querySelector('.subscription__input-wrapper .input-wrapper__input');
         var like = document.querySelectorAll('.reviews__like');
-        
+        var calendarButtonClear = document.querySelector('.calendar__button-empty--clear');
+        var inputArrival = document.querySelector('.reservation__input-wrapper--arrival').childNodes[0];
+        var inputExit = document.querySelector('.reservation__input-wrapper--exit').childNodes[0];
+        var inputGuest = document.querySelector('.drop-down').childNodes[0];
+        var dropDownButtonClear = document.querySelector('.drop-down__list__button-empty--clear ');
+        var dropDownButtonApply = document.querySelector('.drop-down__list__button-empty--apply ');
+        var registrationButton = document.querySelector('.header__button');
+        var enterButton = document.querySelector('.header__button-default');
+
+
         arrival.onclick = controller.showCalendarClick;
         exit.onclick = controller.showCalendarClick;
         datepicker.onclick = controller.showDateClick;
         dropDownButton.onclick = controller.openSelectClick;
         addGuests.onclick = controller.addGuestsClick;
         babyCell.onclick = controller.addBabyClick;
-        emailInput.onfocus = controller.inputFocus;
+        emailInput.onfocus = controller.inputFocusEmail;
         emailInput.onblur = controller.outputFocus;
+        calendarButtonClear.onclick = controller.clearClick
+        inputArrival.onfocus = controller.inputFocusArrival;
+        inputArrival.onblur = controller.outputFocusArrival;
+        inputExit.onfocus = controller.inputFocusExit;
+        inputExit.onblur = controller.outputFocusExit;
+        inputGuest.onfocus = controller.inputFocusGuests;
+        inputGuest.onblur = controller.outputFocusGuests;
+        dropDownButtonClear.onclick = controller.clearGuestsClick;
+        dropDownButtonApply.onclick = controller.guestsApplyClick;
+        registrationButton.onclick = controller.changeLocationReg;
+        enterButton.onclick = controller.changeLocationEnter;
+
+        for (let i = 0; i < like.length; i++) {
+          like[i].onclick = controller.changeLike;
+        }
       }
     }
 

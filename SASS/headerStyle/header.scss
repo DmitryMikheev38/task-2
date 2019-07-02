@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.home-link {
+  cursor: pointer;
+}
+
 .menu {
   margin: 0;
   padding: 0;
@@ -89,3 +93,45 @@
   width: 24px;
   height: 21px;
 }
+
+@media (max-width: 1160px) {
+  .header__wrapper {
+    padding: 0 15px 0px 15px;
+    
+  }
+
+}
+
+
+@media (max-width: 460px) {
+  
+    .header__button, .header__button-default, .menu__button, .header__logo {
+      float: none;
+      display: block;
+    }
+
+    .header__logo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .menu__button {
+      display: inline-block;
+      margin-right: 20px;
+      text-align: center;
+      
+    }
+
+    .header__button-default, .header__button {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      
+    }
+
+    .header__wrapper {
+      padding: 0 30px 15px 30px;
+    }
+  
+  }
+  
