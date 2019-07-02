@@ -994,7 +994,7 @@ html {
   .header__wrapper {
     padding: 0 30px 15px 30px; } }
 .content {
-  background: url(), no-repeat;
+  background: url(/images/index.png), no-repeat;
   background-size: cover;
   height: 830px;
   max-width: 1920px;
