@@ -805,6 +805,12 @@ html {
 .radio:checked + .label-radio::after {
   display: block; }
 
+.radio:checked + .regisration__form__label-radio--men {
+  color: rgba(31, 32, 65, 0.75); }
+
+.radio:checked + .regisration__form__label-radio--women {
+  color: rgba(31, 32, 65, 0.75); }
+
 .radio:checked + .label-radio::before {
   border: 1px solid #BC9CFF; }
 
@@ -897,6 +903,9 @@ html {
   margin: 0 auto;
   position: relative; }
 
+.home-link {
+  cursor: pointer; }
+
 .menu {
   margin: 0;
   padding: 0; }
@@ -962,7 +971,7 @@ html {
 
 @media (max-width: 1160px) {
   .header__wrapper {
-    padding: 0 15px 0 15px; } }
+    padding: 0 15px 0px 15px; } }
 @media (max-width: 460px) {
   .header__button, .header__button-default, .menu__button, .header__logo {
     float: none;
@@ -985,7 +994,7 @@ html {
   .header__wrapper {
     padding: 0 30px 15px 30px; } }
 .content {
-  background: url(../images/index.png), no-repeat;
+  background: url(/images/index.png), no-repeat;
   background-size: cover;
   height: 830px;
   max-width: 1920px;
@@ -1241,14 +1250,14 @@ q {
   cursor: pointer; }
 
 .social-networks__twitter {
-  background-image: url("/images/twitter.svg"); }
+  background-image: url(../../images/twitter.svg); }
 
 .social-networks__face-book {
-  background-image: url("/images/face-book.svg");
+  background-image: url(../../images/face-book.svg);
   margin-left: 20px; }
 
 .social-networks__instagram {
-  background-image: url("/images/instagram.svg");
+  background-image: url(../../images/instagram.svg);
   margin-left: 20px; }
 
 .social-networks {
@@ -1309,4 +1318,4 @@ input:focus {
 :-ms-input-placeholder {
   color: rgba(31, 32, 65, 0.25); }
 
-/*# sourceMappingURL=pageStyle.css.map */
+/*# sourceMappingURL=index.css.map */

@@ -1363,14 +1363,14 @@ q {
   cursor: pointer; }
 
 .social-networks__twitter {
-  background-image: url("/images/twitter.svg"); }
+  background-image: url(../../images/twitter.svg); }
 
 .social-networks__face-book {
-  background-image: url("/images/face-book.svg");
+  background-image: url(../../images/face-book.svg);
   margin-left: 20px; }
 
 .social-networks__instagram {
-  background-image: url("/images/instagram.svg");
+  background-image: url(../../images/instagram.svg);
   margin-left: 20px; }
 
 .social-networks {
