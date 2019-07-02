@@ -805,6 +805,12 @@ html {
 .radio:checked + .label-radio::after {
   display: block; }
 
+.radio:checked + .regisration__form__label-radio--men {
+  color: rgba(31, 32, 65, 0.75); }
+
+.radio:checked + .regisration__form__label-radio--women {
+  color: rgba(31, 32, 65, 0.75); }
+
 .radio:checked + .label-radio::before {
   border: 1px solid #BC9CFF; }
 
@@ -897,6 +903,9 @@ html {
   margin: 0 auto;
   position: relative; }
 
+.home-link {
+  cursor: pointer; }
+
 .menu {
   margin: 0;
   padding: 0; }
@@ -962,7 +971,7 @@ html {
 
 @media (max-width: 1160px) {
   .header__wrapper {
-    padding: 0 15px 0 15px; } }
+    padding: 0 15px 0px 15px; } }
 @media (max-width: 460px) {
   .header__button, .header__button-default, .menu__button, .header__logo {
     float: none;
@@ -1182,19 +1191,19 @@ html {
   vertical-align: top; }
 
 .slider-card__photo--1 {
-  background-image: url("/images/rooms/image1.jpg");
+  background-image: url(../../images/rooms/image1.png);
   outline: none;
   border: none;
   box-shadow: none; }
 
 .slider-card__photo--2 {
-  background-image: url("/images/rooms/image2.jpg"); }
+  background-image: url(../../images/rooms/image2.png); }
 
 .slider-card__photo--3 {
-  background-image: url("/images/rooms/image3.jpg"); }
+  background-image: url(../../images/rooms/image3.png); }
 
 .slider-card__photo--4 {
-  background-image: url("/images/rooms/image4.jpg"); }
+  background-image: url(../../images/rooms/image4.png); }
 
 .room-cards__headline {
   display: block;
@@ -1422,4 +1431,4 @@ input:focus {
 :-ms-input-placeholder {
   color: rgba(31, 32, 65, 0.25); }
 
-/*# sourceMappingURL=page_2_Style.css.map */
+/*# sourceMappingURL=page_2.css.map */
