@@ -29,7 +29,7 @@
   width: 70%;
   background-size: cover;
   height: 485px;
-  background-image: url(../../images/rooms/imagePage_3.1.png);
+  background-image: url(/images/rooms/imagePage_3.1.png);
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
@@ -39,7 +39,7 @@
 .page-images__image--2 {
   width: 30%;
   height: 243px;
-  background-image: url(../../images/rooms/imagePage_3.2.png);
+  background-image: url(/images/rooms/imagePage_3.2.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -52,7 +52,7 @@
 .page-images__image--3 {
   width: 30%;
   height: 243px;
-  background-image: url(../../images/rooms/imagePage_3.3.png);
+  background-image: url(/images/rooms/imagePage_3.3.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -656,7 +656,7 @@
 }
 
 .reservation__button__icon--next {
-  background-image: url('../../images/arrow_forward_white.svg');
+  background-image: url('/images/arrow_forward_white.svg');
   background-position: center;
   background-repeat: no-repeat;
   width: 44px;
