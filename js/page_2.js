@@ -33,7 +33,7 @@ window.onload = function () {
 
 
   rooms = [
-    { images: 'url(/images/rooms/image1.jpg)',
+    { images: 'url(/images/rooms/image1.png)',
       number: 888,
       lux: 'Люкс',
       prise: '9 990',
@@ -41,7 +41,7 @@ window.onload = function () {
       reviews: 145,
     },
     {
-      images: 'url(/images/rooms/image2.jpg)',
+      images: 'url(/images/rooms/image2.png)',
       number: 840,
       lux: '',
       prise: '9 900',
@@ -49,7 +49,7 @@ window.onload = function () {
       reviews: 65,
     },
     {
-      images: 'url(/images/rooms/image3.jpg)',
+      images: 'url(/images/rooms/image3.png)',
       number: 980,
       lux: 'Люкс',
       prise: '8 500',
@@ -57,7 +57,7 @@ window.onload = function () {
       reviews: 35,
     },
     {
-      images: 'url(/images/rooms/image4.jpg)',
+      images: 'url(/images/rooms/image4.png)',
       number: 856,
       lux: '',
       prise: '7 300',
@@ -65,7 +65,7 @@ window.onload = function () {
       reviews: 19,
     },
     {
-      images: 'url(/images/rooms/image5.jpg)',
+      images: 'url(/images/rooms/image5.png)',
       number: 740,
       lux: '',
       prise: '6 000',
@@ -81,7 +81,7 @@ window.onload = function () {
       reviews: 56,
     },
     {
-      images: 'url(/images/rooms/image7.jpg)',
+      images: 'url(/images/rooms/image7.png)',
       number: 678,
       lux: '',
       prise: '5 500',
@@ -89,7 +89,7 @@ window.onload = function () {
       reviews: 45,
     },
     {
-      images: 'url(/images/rooms/image8.jpg)',
+      images: 'url(/images/rooms/image8.png)',
       number: 450,
       lux: '',
       prise: '5 300',
@@ -97,7 +97,7 @@ window.onload = function () {
       reviews: 39,
     },
     {
-      images: 'url(/images/rooms/image9.jpg)',
+      images: 'url(/images/rooms/image9.png)',
       number: 350,
       lux: '',
       prise: '5 000',
@@ -105,7 +105,7 @@ window.onload = function () {
       reviews: 77,
     },
     {
-      images: 'url(/images/rooms/image10.jpg)',
+      images: 'url(/images/rooms/image10.png)',
       number: 666,
       lux: '',
       prise: '5 000',
@@ -113,7 +113,7 @@ window.onload = function () {
       reviews: 25,
     },
     {
-      images: 'url(/images/rooms/image11.jpg)',
+      images: 'url(/images/rooms/image11.png)',
       number: 444,
       lux: '',
       prise: '5 000',
@@ -121,7 +121,7 @@ window.onload = function () {
       reviews: 15,
     },
     {
-      images: 'url(/images/rooms/image12.jpg)',
+      images: 'url(/images/rooms/image12.png)',
       number: 352,
       lux: '',
       prise: '5 000',

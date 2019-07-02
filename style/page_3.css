@@ -805,6 +805,12 @@ html {
 .radio:checked + .label-radio::after {
   display: block; }
 
+.radio:checked + .regisration__form__label-radio--men {
+  color: rgba(31, 32, 65, 0.75); }
+
+.radio:checked + .regisration__form__label-radio--women {
+  color: rgba(31, 32, 65, 0.75); }
+
 .radio:checked + .label-radio::before {
   border: 1px solid #BC9CFF; }
 
@@ -896,6 +902,9 @@ html {
   padding: 0;
   margin: 0 auto;
   position: relative; }
+
+.home-link {
+  cursor: pointer; }
 
 .menu {
   margin: 0;
@@ -1009,7 +1018,7 @@ html {
   width: 70%;
   background-size: cover;
   height: 485px;
-  background-image: url("/images/rooms/imagePage_3.1.jpg");
+  background-image: url("/images/rooms/imagePage_3.1.png");
   background-repeat: no-repeat;
   background-position: center;
   margin: 0; }
@@ -1017,7 +1026,7 @@ html {
 .page-images__image--2 {
   width: 30%;
   height: 243px;
-  background-image: url("/images/rooms/imagePage_3.2.jpg");
+  background-image: url("/images/rooms/imagePage_3.2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1029,7 +1038,7 @@ html {
 .page-images__image--3 {
   width: 30%;
   height: 243px;
-  background-image: url("/images/rooms/imagePage_3.3.jpg");
+  background-image: url("/images/rooms/imagePage_3.3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1272,10 +1281,10 @@ html {
   background-size: cover; }
 
 .reviews__person__photo--one {
-  background-image: url("/images/photo/photo1.jpg"); }
+  background-image: url("/images/photo/photo1.png"); }
 
 .reviews__person__photo--two {
-  background-image: url("/images/photo/photo2.jpg"); }
+  background-image: url("/images/photo/photo2.png"); }
 
 .reviews__person__name {
   height: 48px;
@@ -1562,7 +1571,7 @@ html {
   left: 29px; }
 
 .reservation__button__icon--next {
-  background-image: url(../../images/arrow_forward_white.svg);
+  background-image: url("../../images/arrow_forward_white.svg");
   background-position: center;
   background-repeat: no-repeat;
   width: 44px;
@@ -1791,4 +1800,4 @@ input:focus {
 :-ms-input-placeholder {
   color: rgba(31, 32, 65, 0.25); }
 
-/*# sourceMappingURL=page_3_Style.css.map */
+/*# sourceMappingURL=page_3.css.map */
