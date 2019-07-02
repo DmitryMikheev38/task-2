@@ -73,7 +73,7 @@ window.onload = function () {
       reviews: 44,
     },
     {
-      images: 'url(/images/rooms/image6.jpg)',
+      images: 'url(/images/rooms/image6.png)',
       number: 982,
       lux: '',
       prise: '5 800',
@@ -121,7 +121,7 @@ window.onload = function () {
       reviews: 15,
     },
     {
-      images: 'url(../../images/rooms/image12.png)',
+      images: 'url(/images/rooms/image12.png)',
       number: 352,
       lux: '',
       prise: '5 000',
