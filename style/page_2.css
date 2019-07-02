@@ -187,7 +187,7 @@ html {
   flex-basis: 44px;
   height: 41px;
   width: 44px;
-  background: url("../images/expand_more.svg");
+  background: url(../images/expand_more.svg);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer; }
@@ -231,7 +231,7 @@ html {
   flex-basis: 44px;
   height: 41px;
   width: 44px;
-  background: url("../images/expand_more.svg");
+  background: url(../images/expand_more.svg);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer; }
@@ -463,7 +463,7 @@ html {
   width: 44px;
   height: 44px;
   background-color: #FFFFFF;
-  background-image: url("/images/expand_more.svg");
+  background-image: url(../images/expand_more.svg);
   background-repeat: no-repeat;
   background-position: center; }
 
@@ -559,7 +559,7 @@ html {
   height: 44px;
   position: absolute;
   background-color: Transparent;
-  background-image: url("/images/expand_more_white.svg");
+  background-image: url(../images/expand_more_white.svg);
   background-repeat: no-repeat;
   background-position: center; }
 
@@ -629,7 +629,7 @@ html {
   height: 24px;
   width: 24px;
   display: inline-block;
-  background-image: url("/images/star_border.svg");
+  background-image: url(../images/star_border.svg);
   background-repeat: no-repeat;
   background-position: center; }
 
@@ -746,7 +746,7 @@ html {
   color: #66D2EA;
   width: 40px;
   height: 40px;
-  background-image: url("/images/arrow_forward_white.svg");
+  background-image: url(../images/arrow_forward_white.svg);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-border-radius: 22px;
@@ -885,7 +885,7 @@ html {
   margin: 0; }
 
 .button__icon--next {
-  background-image: url(../../images/arrow_forward_white.svg); }
+  background-image: url(../images/arrow_forward_white.svg); }
 
 .header {
   max-width: 1920px;
@@ -1191,19 +1191,19 @@ html {
   vertical-align: top; }
 
 .slider-card__photo--1 {
-  background-image: url(../../images/rooms/image1.png);
+  background-image: url(../images/rooms/image1.png);
   outline: none;
   border: none;
   box-shadow: none; }
 
 .slider-card__photo--2 {
-  background-image: url(../../images/rooms/image2.png); }
+  background-image: url(../images/rooms/image2.png); }
 
 .slider-card__photo--3 {
-  background-image: url(../../images/rooms/image3.png); }
+  background-image: url(../images/rooms/image3.png); }
 
 .slider-card__photo--4 {
-  background-image: url(../../images/rooms/image4.png); }
+  background-image: url(../images/rooms/image4.png); }
 
 .room-cards__headline {
   display: block;
@@ -1318,7 +1318,7 @@ html {
   margin-top: 23px; }
 
 .input-wrapper__button--next {
-  background-image: url("../../images/arrow_forward.svg");
+  background-image: url(../images/arrow_forward.svg);
   background-repeat: no-repeat;
   background-position: center; }
 
@@ -1363,14 +1363,14 @@ q {
   cursor: pointer; }
 
 .social-networks__twitter {
-  background-image: url(../../images/twitter.svg); }
+  background-image: url(../images/twitter.svg); }
 
 .social-networks__face-book {
-  background-image: url(../../images/face-book.svg);
+  background-image: url(../images/face-book.svg);
   margin-left: 20px; }
 
 .social-networks__instagram {
-  background-image: url(../../images/instagram.svg);
+  background-image: url(../images/instagram.svg);
   margin-left: 20px; }
 
 .social-networks {
