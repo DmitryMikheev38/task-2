@@ -602,7 +602,7 @@ window.onload = function () {
     reviews.innerHTML = rooms[i].reviews;
     let sumStars = rooms[i].stars;
     for (let j = 0; j < sumStars; j++) {
-      stars[j].style.backgroundImage = 'url(/images/star.svg)'
+      stars[j].style.backgroundImage = 'url(../images/star.svg)'
     }
 
     let buttonGroup  = cloneCard.querySelector('.button-group__card');
